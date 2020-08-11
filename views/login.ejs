@@ -1,0 +1,69 @@
+    <div class="container-fluid m-0 p-0 bg-dark h-auto">
+        <nav class="nav super-wide navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top" alt="" loading="lazy">
+                <span class="navbar-brand pl-2">Healthy Rythm</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto mr-0 pr-0">
+                    <a class="nav-item nav-link px-4" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link px-4" id="page2" href="/blog">Blog</a>
+                    <div class="dropdown">
+                        <a class="nav-item nav-link px-4" id="page3" href="/work" role="button" id="nav_dropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                        </a>
+                        <div class="dropdown-menu py-2 border-0 bg-blur" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item px-4 py-2" href="/work">Diet Prescription</a>
+                            <a class="dropdown-item px-4 py-2" href="/work#service2">Preventive Diet</a>
+                            <a class="dropdown-item px-4 py-2" href="/work#service3">Workshops</a>
+                            <a class="dropdown-item px-4 py-2" href="/work#service4">Sports Nutrition</a>
+                            <a class="dropdown-item px-4 py-2" href="/work#service5">Lifestyle Modification</a>
+                            <a class="dropdown-item px-4 py-2" href="/work#service6">Customized Diet Plans</a>
+                            <a class="dropdown-item px-4 py-2" href="/work#service7">Health Risk Assessment</a>
+                            <a class="dropdown-item px-4 py-2" href="/work#service8">Nutritional Counselling</a>
+                            <hr class="mx-0 mt-3 mb-2">
+                            <a class="dropdown-item px-4 py-2" href="/business">Work with me</a>
+                        </div>
+                    </div>
+                    <a class="nav-item nav-link px-4" id="page4" href="/about">About</a>                    
+                    <a class="nav-item nav-link px-4" id="page5" href="/contact">Contact</a>
+                </div>
+            </div>          
+        </nav>
+        <img src="/assets/login-imagebar.png" alt="login-imagebar" class="img-fluid m-0 p-0 w-100">
+    </div>
+
+    <div class="container-fluid row wide my-5 p-0 login-maincontainer">
+        <div class="col-12 col-md-6 m-0 p-0 quoteContainer">
+            <img src="/assets/login-quoteContainerBackground.png" class="img-fluid h-100 w-100">
+            <span class="quoteContainerText">“Sway to the <br>Rythm of Health”</span>
+        </div>
+        <div class="col-12 col-md-6 m-0 p-0 loginFormContainer text-dark">
+            <div class="h-100 w-100">
+                <form id="login_form" class="p-5 m-5 border bg-white" name="Loginform" action="/adminFormHandling/login" method="POST">
+                    <span class="font-primary loginForm-header">Healthy Rythm</span>
+                    <br>
+                    <%- include ('./partials/messages') %>
+                    <br>
+                    <div class="form-group w-auto">
+                        <label for="loginEmailAddress">EMAIL ADDRESS</label>
+                        <input id="loginEmailAddress" class="form-control" name="admin_email" value="reuben.milag@gmail.com" type="email">
+                    </div>
+                    <div class="form-group w-auto">
+                        <label for="loginPassword">PASSWORD</label>
+                        <input id="loginPassword" class="form-control" name="password" value="neelgai009" type="password">
+                    </div>
+                    <br>
+                    <button class="btn bg-dark text-light float-right px-4 font-secondary">LOG IN</button>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    

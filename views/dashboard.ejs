@@ -1,0 +1,113 @@
+<div class="container-fluid m-0 p-0 bg-dark h-auto">
+    <nav class="nav super-wide navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top" alt="" loading="lazy">
+            <span class="navbar-brand pl-2">Healthy Rythm</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto mr-0 pr-0">
+                <a class="nav-item nav-link px-4" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link px-4" id="page2" href="/blog">Blog</a>
+                <div class="dropdown">
+                    <a class="nav-item nav-link px-4" id="page3" href="/work" role="button" id="nav_dropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
+                    </a>
+                    <div class="dropdown-menu py-2 border-0 bg-blur" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item px-4 py-2" href="/work">Diet Prescription</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service2">Preventive Diet</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service3">Workshops</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service4">Sports Nutrition</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service5">Lifestyle Modification</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service6">Customized Diet Plans</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service7">Health Risk Assessment</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service8">Nutritional Counselling</a>
+                        <hr class="mx-0 mt-3 mb-2">
+                        <a class="dropdown-item px-4 py-2" href="/business">Work with me</a>
+                    </div>
+                </div>
+                <a class="nav-item nav-link px-4" id="page4" href="/about">About</a>                    
+                <a class="nav-item nav-link px-4" id="page5" href="/contact">Contact</a>
+            </div>
+        </div>          
+    </nav>
+    <img src="/assets/login-imagebar.png" alt="login-imagebar" class="img-fluid m-0 p-0 w-100">
+</div>
+<!-- end of nav -->
+
+
+<!-- DASHBOARD BODY -->
+
+
+<div class="container-fluid row super-wide">
+    <div class="bg-white col-2 my-3 dashboard-sidebar">
+        <button class="btn bg-ivory dashboard-sidebar-btnText mx-auto my-4 px-3 dashboard-sidebar-mainBtn">upload new blog</button>
+        <button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">edit blogs</button><hr class="m-0">
+        <button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">service messages</button><hr class="m-0">            
+        <button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">business messages</button><hr class="m-0">
+        <button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">subscriber email</button><hr class="m-0">
+        <button class="btn bg-dark text-light dashboard-sidebar-btnText mx-auto mt-auto mb-4 px-5 py-0 dashboard-sidebar-mainBtn dashboard-sidebar-logoutbtn">Log out</button>
+    </div>
+    <div class="container-fluid col-10 row-1">
+        <div class="col-12 bg-white dashboard-searchbar m-3 p-0">
+            <div class="input-group m-0 h-100 w-100">
+                <form id="search_form" class="p-0 m-0 border bg-white border-0 w-75" name="Searchform" action="#" method="POST">
+                    <div class="input-group-prepend bg-white">
+                        <span class="input-group-text bg-white border-0" id="basic-addon1"><img src="/assets/search-solid.svg" class="img-fluid dashboard-searchbar-icon" alt="search icon"></span>
+                        <input type="text" class="form-control border-0 dashboard-searchbar-input font-secondary" placeholder="SEARCH" aria-label="Username" aria-describedby="basic-addon1" style="outline: none !important;">
+                    </div>
+                </form>
+                <span class="font-secondary dashboard-searchbar-text ml-auto mr-3">Regina Pinheiro</span>
+            </div>
+        </div>
+        <div class="col-12 bg-ivory dashboard-titlebar m-3">
+            <span class="dashboard-titlebar-text px-2 font-secondary">upload blog</span>
+        </div>
+        <div class="col-12 bg-white m-3 h-auto">
+            <form id="form-blogUpload" class="p-4 m-0 mb-5 border bg-white border-0 w-75 float-left h-auto" name="blogUpload" action="#" method="POST">
+                <br>
+                <%- include ('./partials/messages') %>
+                <br>
+                <div class="form-group p-2">
+                    <label for="blogUpload-title">title</label>
+                    <input id="blogUpload-title" class="form-control" name="blog-title" type="text">
+                </div>
+                <div class="form-group p-2">
+                    <label>image</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label px-2" for="customFile">Choose file</label>
+                    </div>
+                </div>
+                <div class="form-row p-2">
+                    <div class="form-group col">
+                        <label for="blogUpload-primaryTag">Primary Tag</label>
+                        <select id="blogUpload-primaryTag" class="form-control">
+                            <option class="" value="Nutrition">Nutrition</option>
+                            <option class="" value="Healthcare">Healthcare</option>
+                            <option class="" value="Events">Events</option>
+                            <option class="" value="Recipies">Recipies</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label>Secondary Tag</label>
+                        <input id="blogUpload-secondaryTag" class="form-control" name="blog-secondaryTag" type="text">
+                    </div>
+                </div>   
+                <div class="form-group p-2">
+                    <label for="blogUpload-body">body</label>
+                    <textarea id="blogUpload-body" class="form-control" name="blog-body"></textarea>
+                </div>   
+                <input class="btn btn-dark text-light font-secondary float-right px-4 m-2" type="submit" value="Upload">          
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js" ></script> -->
+
+
+<!-- END OF DASHBOARD BODY -->
