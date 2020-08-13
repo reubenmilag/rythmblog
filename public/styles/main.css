@@ -38,6 +38,10 @@ html, body {
     background-color: #F2F6EA !important;
 }
 
+.bg-nyanza {
+    background-color: #D9E4C8 !important;
+}
+
 .text-dark {
     color: #141212 !important;
 }
@@ -79,12 +83,32 @@ nav a:hover {
     text-decoration: none;
 }
 
+.header-bold {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.header-default {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
 
 .footer-bs {
     /* background-color: #233329; */
 	padding: 60px 40px;
 	padding-bottom: 10px;
-	color: rgba(255,255,255,1.00);
+    color: rgba(255,255,255,1.00);
 }
 
 .footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
@@ -129,6 +153,173 @@ nav a:hover {
 @media (min-width: 768px) {
 	.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
 }
+
+
+
+
+
+/* ********** INDEX CSS ********** */
+  
+.navbar {
+    position: absolute;
+    width:100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.0) 100%);
+    z-index:10;
+    border-radius:0;
+    border-color:transparent;
+    margin: auto;
+}
+
+.navbar .navbar-brand {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar .nav-item {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08em !important;
+    color: #FFFFFF;
+}
+
+.navbar .active {
+    background: rgba(227, 227, 227, 0.2);
+    backdrop-filter: blur(24px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 0px 0px 10px 10px;
+    max-height: 38px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 5% !important;
+}
+
+.index-carousel .carousel-item {
+    height: 100vh !important; 
+}
+
+.index-carousel .carousel-item img {
+    height: 100vh !important; 
+    width: 100%;
+}
+
+.carousel-caption {
+	text-align: left;
+	position: absolute;
+    top: 38%;
+    left: 12%;
+}
+
+.carousel-caption small {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+}
+
+.carousel-caption h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.7rem;
+    line-height: 3.7rem;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.9);
+
+}
+
+.carousel-caption p {
+    width: 45%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-caption .btn {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.bio-imagesContainer {
+    position: relative;
+}
+
+#bio-image1 {
+    position: absolute;
+    max-height: 17rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    left: 15%;
+    top: 12%;
+    transform: rotate(-3deg);
+}
+
+#bio-image2 {
+    position: absolute;
+    max-height: 19rem;
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+    left: 55%;
+    top: 30%;
+    transform: rotate(2deg);
+}
+
+#bio-image3 {
+    position: absolute;
+    max-height: 20rem;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+    left: 27%;
+    top: 41%;
+    transform: rotate(-3deg);
+}
+
+.bio-linktext-dark {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.bio-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 2.3rem;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.latestblogs-header {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
 
 
 

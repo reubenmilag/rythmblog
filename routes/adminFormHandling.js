@@ -32,27 +32,34 @@ router.post('/login', (req, res, next) => {
 
 
 //NEW BLOG UPLOAD HANDLE
-router.post('/upload-blog', ensureAdminAuthenticated, upload.single('blog_image'), async (req, res) => {
+router.post('/upload-blog', ensureAdminAuthenticated, upload.single('blog_image'), async (req, res) => { 
     let errors = []
-    const blog_imageName = req.file != null ? req.file.filename : null
+    try {
+        blog_imageName = req.file != null ? req.file.filename : null;
+        blog_imageOrignalName = req.file != null ? req.file.originalname : null;
+        blog_imageMimeType = req.file != null ? req.file.mimetype : null;
+    } catch (error) {
+        errors.push({ msg: 'There was an error uploading the blog image. Please try again.' })
+        //console.log(error)
+        res.render('dashboard', { errors })
+    }
+
     const blog = new Blog ({
         blog_title: req.body.blog_title,
         blog_imageName: blog_imageName,
-        blog_imageOrignalName: req.file.originalname,
-        blog_imageMimeType: req.file.mimetype,
+        blog_imageOrignalName: blog_imageOrignalName,
+        blog_imageMimeType: blog_imageMimeType,
         blog_primaryTag: req.body.blog_primaryTag,
         blog_secondaryTag: req.body.blog_secondaryTag,
         blog_body: req.body.blog_body
     })
 
     //check if all fields are filled
-    if(!blog.blog_title || !blog.blog_primaryTag || !blog.blog_secondaryTag || !blog.blog_body ){
-        
+    if(!blog.blog_title || !blog.blog_imageOrignalName || !blog.blog_primaryTag || !blog.blog_secondaryTag || !blog.blog_body ) {       
+        if (blog_imageName) {
+            removeBlogImage(blog_imageName)
+        }
         errors.push({ msg: 'Please fill all fields.' })
-    }
-
-    if (blog_imageName == null) {
-        removeBlogImage(blog_imageName)
     }
 
     if (errors.length > 0) {
@@ -62,21 +69,23 @@ router.post('/upload-blog', ensureAdminAuthenticated, upload.single('blog_image'
             const newBlog = await blog.save()
             req.flash('success_msg', 'Blog uploaded successfully.')
             res.redirect('/admin/dashboard')
-        } catch {
-            res.render('dashboard', { errors })
+        } catch (error) {
             errors.push({ msg: 'Error uploading blog.' })
+            //console.log(error)
+            res.render('dashboard', { errors })
         }
     }
 })
 
-router.get('/dashboard', ensureAdminAuthenticated, (req, res) => {
-    res.render('dashboard')
-})
-
 function removeBlogImage(blog_imageName) {
-    fs.unlink(path.join( uploadPath, blog_imageName ), err => {
-        if (err) console.error(err)
-    })
+    try {
+        fs.unlink(path.join( uploadPath,'/', blog_imageName ), err => {
+            if (err) console.error(err)
+        })
+    } catch (error) {
+        console.log('File unlink error')
+    }
+    
 }
 
 
