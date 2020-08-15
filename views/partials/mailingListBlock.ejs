@@ -1,0 +1,23 @@
+<div class="container-fluid contact-container" id="mailingListBlock">
+    <div class="continer-fluid wide p-5">
+      <h3 class="font-primary contact-header px-5 mt-4"><b>Join&nbsp;</b> the club!</h3>
+      <p class="font-secondary contact-para px-5">join my mailing list to stay uptodate with the latest from me</p>
+      <form class="px-5 py-3 mb-4 font-secondary" id="form-mailingList" action="/formHandling/mailingList" method="POST">
+        <%- include ('./messages') %>
+        <div class="form-row" aria-describedby="safetyMessageBlock">
+          <div class="col-12 col-md-3">
+            <input type="text" class="form-control" placeholder="your name"  name="mailingName">
+          </div>
+          <div class="col-12 col-md-4">
+            <input type="email" class="form-control" placeholder="your email address" name="mailingEmail">
+          </div>
+          <div class="col-12 col-md-2">
+            <button class="btn form-mailingList-submitBtn px-3 ml-3 onclick="document.getElementById('form-mailingList').submit();">subscribe</button>
+          </div>
+          <small id="safetyMessageBlock" class="form-text px-3">
+            We respect your privacy and will never share your data.
+          </small>
+        </div>
+      </form>
+    </div>
+</div>

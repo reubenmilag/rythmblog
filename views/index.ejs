@@ -49,7 +49,7 @@
         </div>   
       </div>
       <div class="carousel-item hero_image" data-interval="10000">
-        <img src="/assets/index _herocarousel_img_2.png" class="d-block w-100" alt="...">
+        <img src="/assets/index _herocarousel_img_2p.png" class="d-block w-100" alt="...">
         <div class="carousel-caption wide">
           <small>services</small><br>
           <h3 class="font-primary">Workshops on health and wellness</h3>
@@ -58,10 +58,10 @@
         </div>   
       </div>
       <div class="carousel-item hero_image" data-interval="10000">
-        <img src="/assets/index _herocarousel_img_3.png" class="d-block w-100" alt="...">
+        <img src="/assets/index _herocarousel_img_3.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption wide">
           <small>services</small><br>
-          <h3 class="font-primary">Customized Nutritional Counselling</h3><br>
+          <h3 class="font-primary">Nutritional Counselling</h3>
           <p class="d-sm-none d-md-block font-primary">With all the information about health and nutrition, it is hard to keep the rules straight.<br> Let me help you with that!</p>
           <a href="/work#service8"><button class="btn mt-4 border py-2 px-4">Know more</button></a>
         </div>   
@@ -96,19 +96,81 @@
     </div>
   </div>
 
-  <div class="container-fluid m-0 p-0 bg-nyanza">
+  <div class="container-fluid m-0 px-0 py-2 bg-nyanza">
     <div class="container-fluid wide">
       <h3 class="font-primary latestblogs-header pt-5 pb-3"><b>Latest</b> Blogs</h3>
+    </div>  
+    <div class="row row-cols-1 row-cols-md-4 wide">
+      <% latestBlogs.forEach( blog => { %>
+        <div class="col mb-2">
+          <div class="card latestblogs-card mb-5 border-0">
+            <img src="/assets/blog-assets/<%= blog.blog_imageName %>" class="card-img-top img-fluid m-0 p-0 latestblogs-image" alt="...">
+            <div class="card-body latestblogs-title font-primary">
+              <h5 class="card-title m-0"><%= blog.blog_title %></h5>
+            </div>
+          </div>
+        </div>
+      <% }) %>
     </div>
-    <div class="container-fluid row">
-      
+    <div class="container-fluid wide latestBlogs-allBtn mb-5">
+      <a href="#" class="text-decoration-none latestBlogs-allBtn">view all blogs</a>
     </div>
-
-
-
-
-
   </div>
+
+  <div class="container-fluid py-5">
+    <div class="container-fluid wide">
+      <h3 class="my-5 pt-5 font-primary services-heading">I’d <b>love</b> to work with you. <b>Click on the services</b> below to <br> learn more about what we have to offer.</h3>
+      <br>
+      <div class="row font-secondary mt-2 mb-5">
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ Diet Prescriptions</a>
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ preventive Diets</a>
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ workshops</a>
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ sports nutrition</a>
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ lifestyle modification</a>
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ Customized diet plans</a>
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ health risk accessment</a>
+        <a href="#" class="text-decoration-none col-12 col-md-4 services-list-item">+ Nutritional Councelling</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid bg-nyanza">
+    <div class="container-fluid wide row">
+      <div class=" col-12 col-md-3">
+        <img src="/assets/aboutImage-regina.jpg" class="aboutImage" alt="regina">
+      </div>
+      <div class="container-fluid col-12 col-md-9 p-5">
+        <h3 class="font-primary index-aboutheader pl-5 pt-4 pb-2">Sway to the <b>&nbsp;Rythm of Health</b>.</h3>
+        <p class="font-secondary index-aboutpara px-5">I am Regina Pinheiro, and I am so happy that you are here!<br> I’m a Clinical Dietician & Wellness Consultant on mission to get you the best of the Nutrition world. <a href="#" class="text-dark"><b>Learn more about me</b></a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container-fluid contact-container">
+    <div class="continer-fluid wide p-5">
+      <h3 class="font-primary contact-header px-5 mt-4"><b>Join&nbsp;</b> the club!</h3>
+      <p class="font-secondary contact-para px-5">join my mailing list to stay uptodate with the latest from me</p>
+      <form class="px-5 py-3 mb-4 font-secondary" id="form-mailingList" action="#" method="POST">
+        <div class="form-row" aria-describedby="safetyMessageBlock">
+          <div class="col-12 col-md-3">
+            <input type="text" class="form-control" placeholder="your name">
+          </div>
+          <div class="col-12 col-md-4">
+            <input type="text" class="form-control" placeholder="your email address">
+          </div>
+          <div class="col-12 col-md-2">
+            <button class="btn form-mailingList-submitBtn px-3 ml-3 onclick="document.getElementById('form-mailingList').submit();">subscribe</button>
+          </div>
+          <small id="safetyMessageBlock" class="form-text px-3">
+            We respect your privacy and will never share your data.
+          </small>
+        </div>
+      </form>
+    </div>
+  </div> -->
+
+  <%- include ('../views/partials/mailingListBlock.ejs') %>
 
 
 

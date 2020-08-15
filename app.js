@@ -56,6 +56,7 @@ app.use((req, res, next) => {
 
 //ROUTES
 app.use('/', require('./routes/routeHandling'))
+app.use('/formHandling', require('./routes/formHandling'))
 app.use('/admin', require('./routes/admin'))
 app.use('/adminFormHandling', require('./routes/adminFormHandling'))
 app.use(express.static('public'))

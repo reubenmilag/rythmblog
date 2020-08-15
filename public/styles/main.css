@@ -104,6 +104,89 @@ nav a:hover {
     color: #000000;
 }
 
+.contact-container {
+    background-image: url(/assets/contact-bgimage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact-header {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.contact-para {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#form-mailingList input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+    color: #F2F6EA !important;
+}
+
+#form-mailingList input::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.form-mailingList-submitBtn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: 3px solid rgba(255, 255, 255, 0.9) !important; 
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.form-mailingList-submitBtn:hover {
+    color: #F2F6EA !important;
+}
+
+#safetyMessageBlock {    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.125rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+
 .footer-bs {
     /* background-color: #233329; */
 	padding: 60px 40px;
@@ -163,7 +246,7 @@ nav a:hover {
 .navbar {
     position: absolute;
     width:100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.0) 100%);
     z-index:10;
     border-radius:0;
     border-color:transparent;
@@ -319,6 +402,92 @@ nav a:hover {
     letter-spacing: 0.01em;
     color: #000000;
 }
+
+.latestblogs-card {
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));
+}
+
+.latestblogs-image {
+    height: 15rem;
+}
+
+.latestblogs-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 2.8rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: #000000;
+}
+
+.latestBlogs-allBtn {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 3rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.services-heading {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 3rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+}
+
+.services-list-item {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 4.5rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.aboutImage {
+    height: 22rem;
+    width: 16rem;
+}
+
+.index-aboutheader {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);}
+
+.index-aboutpara {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 32px;
+    align-items: center;
+    text-align: left;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+
+
 
 
 
