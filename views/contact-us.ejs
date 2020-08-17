@@ -47,7 +47,7 @@
     <div class="col-12 col-md-6 h-100 border border-top-0 border-right-0 border-bottom-0 mt-5 m-md-0 contactUs-FormContainer">
         <h3 class="font-primary p-4 contactUs-header">or fill out this form, we’ll
             quickly get back to you</h3>
-        <%- include ('./partials/messages.ejs') %>
+        <%- include ('./partials/contactUs_messages.ejs') %>
         <form id="contactUs-Form" class="font-secondary my-md-4 px-1 px-md-5" action="/formHandling/contact-us" method="POST">
             <div class="form-group">
                 <label for="contactUS_name">Full name</label>
@@ -72,8 +72,8 @@
 
 <div class="container-fluid bg-nyanza mt-5">
     <div class="container-fluid wide row font-primary">
-        <a href="#" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark">see our blogs &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
-        <a href="#" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark bottom-links-right">know more about us &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
+        <a href="/blog" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark">see our blogs &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
+        <a href="/about-us" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark bottom-links-right">know more about us &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
     </div>
 </div>
 <%- include ('../views/partials/mailingListBlock.ejs') %>
