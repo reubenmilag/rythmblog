@@ -16,6 +16,11 @@ router.get('/', async(req, res) => {
     }
 })
 
+//CONTACT PAGE
+router.get('/contact-us', (req, res) => {
+    res.render('contact-us')
+})
+
 
 
 

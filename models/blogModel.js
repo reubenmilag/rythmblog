@@ -7,6 +7,9 @@ const blogSchema = new mongoose.Schema({
         type: String,
         default: 'no title'
     },
+    blog_link: {
+        type: String
+    },
     blog_imageName: {
         type: String,
         default: ''

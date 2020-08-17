@@ -54,6 +54,12 @@ html, body {
     font-family: 'Lato', sans-serif;
 }
 
+.navbar-nav .active {
+    background: rgba(227, 227, 227, 0.2);
+    border-radius: 10px;
+    max-height: 38px;
+}
+
 .navbar-brand {
     font-family: 'Playfair Display', serif;
     font-style: normal;
@@ -183,6 +189,32 @@ nav a:hover {
     align-items: center;
     letter-spacing: 0.125rem;
     color: rgba(255, 255, 255, 0.7);
+}
+
+.bottom-links {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 2.7rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.bottom-links-right {
+    border-left: 1px solid rgba(150, 150, 150, 0.2);
+}
+
+.bottom-links-icon {
+    color: #141212;
+    opacity: 75%;
+    font-size: 1rem;
+}
+
+@media (max-width: 576px) { 
+    .bottom-links-right {
+        border: none !important;
+    }
 }
 
 
@@ -486,6 +518,93 @@ nav a:hover {
     letter-spacing: 0.02em;
     color: #000000;
 }
+
+
+
+
+
+
+
+/* ********** CONTACT-US CSS ********** */
+
+.contactUs-container {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 576px) { 
+    .contactUs-FormContainer {
+        border: none !important;
+    }
+}
+
+.contactUs-header {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 48px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.contactUs-connectText {
+    font-style: normal;
+    font-weight: bold !important;
+    font-size: 20px;
+    line-height: 32px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#contactUs-Form label {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.contactUs-btn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mailingList = require('../models/mailingListModel')
 const blogs = require('../models/blogModel')
+const contactUsMessage = require('../models/contactUsModel')
 const { check, validationResult } = require('express-validator');
 const nodemailer = require('nodemailer')
 
@@ -35,6 +36,41 @@ router.post('/mailingList', [check('mailingEmail').isEmail()], async(req, res) =
             const subscriberDetails  = newSubscriber.save() 
             req.flash('success_msg', 'Subscribed successfullly!')
             res.redirect('/#mailingListBlock')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+})
+
+
+router.post('/contact-us',  [check('contactUs_email').isEmail()], async(req, res) => {
+    let errors = []
+    const contactUs_Message = new contactUsMessage ({
+        sender_name: req.body.contactUs_name,
+        sender_phone: req.body.contactUs_phone,
+        sender_email: req.body.contactUs_email,
+        sender_message: req.body.contactUs_textbox
+    })
+
+    if (!contactUs_Message.sender_name || !contactUs_Message.sender_email || !contactUs_Message.sender_phone || !contactUs_Message.sender_message ) {
+        errors.push({ msg: 'Please fill all fields' })
+    }
+
+    //CHECK IS EMAIL IS VALID
+    const error = validationResult(req)
+    if (!error.isEmpty()) {
+        console.log(error)
+        errors.push ({ msg: "Please enter a valid Email address" })
+    }
+
+    if (errors.length > 0) {
+        const latestBlogs = await blogQuery.exec()
+        res.render('contact-us', ({ errors }))
+    } else {
+        try{
+            const contactUs_MessageDetails  = contactUs_Message.save() 
+            req.flash('success_msg', 'Thank you for your response. Our team will get back to soon.')
+            res.redirect('/contact-us')
         } catch (error) {
             console.log(error)
         }

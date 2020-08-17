@@ -1,0 +1,79 @@
+<div class="container-fluid m-0 p-0 bg-dark h-auto">
+    <nav class="nav super-wide navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top" alt="" loading="lazy">
+            <span class="navbar-brand pl-2">Healthy Rythm</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto mr-0 pr-0">
+                <a class="nav-item nav-link px-4" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link px-4" id="page2" href="/blog">Blog</a>
+                <div class="dropdown nav-item">
+                  <a class="nav-item nav-link px-4" id="page3" href="/work" role="button" id="nav_dropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Services
+                  </a>
+                    <div class="dropdown-menu py-2 border-0 bg-blur" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item px-4 py-2" href="/work">Diet Prescription</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service2">Preventive Diet</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service3">Workshops</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service4">Sports Nutrition</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service5">Lifestyle Modification</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service6">Customized Diet Plans</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service7">Health Risk Assessment</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service8">Nutritional Counselling</a>
+                        <hr class="mx-0 mt-3 mb-2">
+                        <a class="dropdown-item px-4 py-2" href="/business">Work with me</a>
+                    </div>
+                </div>
+                <a class="nav-item nav-link px-4" id="page4" href="/about">About</a>                    
+                <a class="nav-item nav-link p-4 active" id="page5" href="/contact-us">Contact</a>
+            </div>
+        </div>          
+    </nav>
+    <img src="/assets/login-imagebar.png" alt="login-imagebar" class="img-fluid m-0 p-0 w-100">
+</div>
+
+<div class="container container-fluid m-0 my-md-5 mx-md-auto bg-ivory contactUs-container wide row">
+    <div class="col-12 col-md-6 h-100 m-0">
+        <h3 class="font-primary pt-4 pb-5 contactUs-header">Contact Us</h3>
+        <p class="font-primary mt-0 mt-md-4 contactUs-connectText">+91 - 9167040351</p>
+        <p class="font-primary contactUs-connectText">reginapinheiro19@gmail.com</p>
+        <a href="https://www.facebook.com/HealthyRythm" target="_blank" class="text-decoration-none text-dark"><p class="font-primary contactUs-connectText">Facebook</p></a>
+        <a href="https://www.instagram.com/healthyrythm/" target="_blank" class="text-decoration-none text-dark"><p class="font-primary contactUs-connectText">Instagram</p></a>
+    </div>
+    <div class="col-12 col-md-6 h-100 border border-top-0 border-right-0 border-bottom-0 mt-5 m-md-0 contactUs-FormContainer">
+        <h3 class="font-primary p-4 contactUs-header">or fill out this form, we’ll
+            quickly get back to you</h3>
+        <%- include ('./partials/messages.ejs') %>
+        <form id="contactUs-Form" class="font-secondary my-md-4 px-1 px-md-5" action="/formHandling/contact-us" method="POST">
+            <div class="form-group">
+                <label for="contactUS_name">Full name</label>
+                <input type="text" class="form-control border-0" id="contactUs_name" name="contactUs_name" required>
+            </div>
+            <div class="form-group">
+                <label for="contactUS_phone">phone number</label>
+                <input type="number" class="form-control border-0" id="contactUs_phone" name="contactUs_phone" required>
+            </div>
+            <div class="form-group">
+                <label for="contactUS_email">Email address</label>
+                <input type="email" class="form-control border-0" id="contactUs_email" name="contactUs_email" required>
+            </div>
+            <div class="form-group">
+                <label for="contactUS_textbox">how can we help?</label>
+                <textarea class="form-control border-0" id="contactUs_textbox" rows="5" name="contactUs_textbox" required></textarea>
+            </div>
+        </form> 
+        <button class="btn bg-dark text-light float-right mx-5 mb-5 font-primary contactUs-btn px-3 py-2 w-sm-100 w-md-auto" onclick="document.getElementById('contactUs-Form').submit();">SEND MESSAGE</button>
+    </div>
+</div>
+
+<div class="container-fluid bg-nyanza mt-5">
+    <div class="container-fluid wide row font-primary">
+        <a href="#" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark">see our blogs &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
+        <a href="#" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark bottom-links-right">know more about us &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
+    </div>
+</div>
+<%- include ('../views/partials/mailingListBlock.ejs') %>

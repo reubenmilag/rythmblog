@@ -44,8 +44,11 @@ router.post('/upload-blog', ensureAdminAuthenticated, upload.single('blog_image'
         res.render('dashboard', { errors })
     }
 
+    const blog_link = req.body.blog_title.replace(/ /g, '-')
+
     const blog = new Blog ({
         blog_title: req.body.blog_title,
+        blog_link: blog_link,
         blog_imageName: blog_imageName,
         blog_imageOrignalName: blog_imageOrignalName,
         blog_imageMimeType: blog_imageMimeType,
