@@ -79,7 +79,7 @@ router.get('/blogs:sort', async (req, res) => {
             console.log(error)
         }
     }
-    
+
     else {
         try {
             Blogs = await blogPageQuery.exec()
@@ -110,6 +110,15 @@ router.get('/blogs:sort', async (req, res) => {
         console.log(error)
     }
 }) */
+
+
+
+
+//SERVICES PAGE
+router.get('/services', (req, res) => {
+    res.render('services')
+})
+
 
 
 
