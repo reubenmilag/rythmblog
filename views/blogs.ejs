@@ -1,0 +1,108 @@
+<div class="container-fluid m-0 p-0 bg-dark h-auto">
+    <nav class="nav super-wide navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top" alt="" loading="lazy">
+            <span class="navbar-brand pl-2">Healthy Rythm</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto mr-0 pr-0">
+                <a class="nav-item nav-link px-4" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link p-4 active" id="page2" href="/blog">Blog</a>
+                <div class="dropdown nav-item">
+                  <a class="nav-item nav-link px-4" id="page3" href="/work" role="button" id="nav_dropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Services
+                  </a>
+                    <div class="dropdown-menu py-2 border-0 bg-blur" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item px-4 py-2" href="/work">Diet Prescription</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service2">Preventive Diet</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service3">Workshops</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service4">Sports Nutrition</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service5">Lifestyle Modification</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service6">Customized Diet Plans</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service7">Health Risk Assessment</a>
+                        <a class="dropdown-item px-4 py-2" href="/work#service8">Nutritional Counselling</a>
+                        <hr class="mx-0 mt-3 mb-2">
+                        <a class="dropdown-item px-4 py-2" href="/business">Work with me</a>
+                    </div>
+                </div>
+                <a class="nav-item nav-link px-4" id="page4" href="/about">About</a>                    
+                <a class="nav-item nav-link px-4" id="page5" href="/contact-us">Contact</a>
+            </div>
+        </div>          
+    </nav>
+    <img src="/assets/login-imagebar.png" alt="login-imagebar" class="img-fluid m-0 p-0 w-100">
+</div>
+
+
+
+
+<div class="container-fluid wide row py-5 mb-3">
+    <div class="col-3">
+        <h4 class="bg-dark text-light font-secondary blogs-sidebar-header mb-2">Sort by:</h4>
+        <ul class="list-group blogs-list-group">
+            <li class="list-group-item border-0 bg-mainColor" onclick="window.location.href='/blogs:';">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio1" name="SortBy" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio1">latest first</label>
+                </div>
+            </li>
+            <li class="list-group-item border-0 bg-mainColor" onclick="window.location.href='/blogs:asc';">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2" name="SortBy" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio2">oldest first</label>
+                </div>
+            </li>
+        </ul>
+
+
+
+        <h4 class="bg-dark text-light font-secondary blogs-sidebar-header mb-2 mt-5">Filter by:</h4>
+        <ul class="list-group blogs-list-group">
+            <li class="list-group-item border-0 bg-mainColor" onclick="window.location.href='/blogs:nutrition';">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio4" name="FilterBy" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio4">nutrition</label>
+                </div>
+            </li>
+            <li class="list-group-item border-0 bg-mainColor" onclick="window.location.href='/blogs:events';">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio5" name="FilterBy" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio5">events</label>
+                </div>
+            </li>
+            <li class="list-group-item border-0 bg-mainColor" onclick="window.location.href='/blogs:recipes';">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio6" name="FilterBy" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio6">recipes</label>
+                </div>                
+            </li>
+            <li class="list-group-item border-0 bg-mainColor"  onclick="window.location.href='/blogs:lifestyle';">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio7" name="FilterBy" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio7">Lifestyle</label>
+                </div>                
+            </li>
+        </ul>
+    </div>
+    <div class="col-9 row" id="SortingDesc">
+        <% Blogs.forEach( blog => { %>
+        <div class="col-12 col-md-4 mb-2 mb-md-0 pr-md-0 h-auto">
+              <div class="card blogs-card mb-5 border-0">
+            <img src="/assets/blog-assets/<%= blog.blog_imageName %>" class="card-img-top img-fluid m-0 p-0 blogs-image" alt="...">
+            <div class="card-body blogs-title font-primary bg-mainColor text-center">
+              <h5 class="card-title m-0"><%= blog.blog_title %></h5>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+
+<%- include ('../views/partials/aboutBlock.ejs') %>
+
+  
+<%- include ('../views/partials/mailingListBlock.ejs') %>
