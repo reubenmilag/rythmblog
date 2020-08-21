@@ -119,6 +119,11 @@ router.get('/services', (req, res) => {
     res.render('services')
 })
 
+//ABOUT-US PAGE
+router.get('/about-us', (req, res) => {
+    res.render('about-us')
+})
+
 
 
 
