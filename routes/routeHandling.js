@@ -16,7 +16,7 @@ router.get('/', async(req, res) => {
     }
 })
 
-//BLOGS PAGE
+//BLOGS MAIN PAGE
 router.get('/blogs:sort', async (req, res) => {
     let blogPageQuery = blogs.find().sort({blog_uploadDate: 'desc'})
     let blogPageQueryAsc = blogs.find().sort({blog_uploadDate: 'asc'})
@@ -92,24 +92,28 @@ router.get('/blogs:sort', async (req, res) => {
     }
 })
 
-/* router.post('/blogs:met', async (req, res) => {
-    let blogPageQuery = blogs.find().sort({blog_uploadDate: 'desc'})
-    let blogPageQueryAsc = blogs.find().sort({blog_uploadDate: 'asc'})
-    console.log(req.body.sortByAsc)
-    if (req.body.sortByAsc == null || req.body.sortByAsc == '' ) {
-        Blogs = await blogPageQueryAsc.exec()        
-    } 
-    if (req.body.sortByAsc == 'asc') {
-        Blogs = await blogPageQueryAsc.exec() 
-    }
+
+
+//BLOG ROUTE
+router.get('/blog/:blogName', async (req, res) => {
+    let blogPageQuery = blogs.findOne().where('blog_link').equals(req.params.blogName)
+    let Blog = await blogPageQuery.exec() 
+    let currentId = Blog._id;
+    let nextBlogQuery = blogs.findOne({_id: {$gt: currentId}}).sort({_id: 1 }).limit(1)
+    let nextBlogExec = await nextBlogQuery.exec() 
+    let prevBlogQuery = blogs.findOne({_id: {$lt: currentId}}).sort({_id: -1 }).limit(1)
+    let prevBlogExec = await prevBlogQuery.exec() 
     try {
-        res.render('blogs', {
-            Blogs: Blogs
-        })
+        res.render('blog', {
+            Blog: Blog,
+            prevBlog: prevBlogExec,
+            nextBlog: nextBlogExec
+        })   
     } catch (error) {
         console.log(error)
+        res.redirect('/blogs:')
     }
-}) */
+})
 
 
 
@@ -117,6 +121,11 @@ router.get('/blogs:sort', async (req, res) => {
 //SERVICES PAGE
 router.get('/services', (req, res) => {
     res.render('services')
+})
+
+//WORK WITH US PAGE
+router.get('/work-with-us', (req, res) => {
+    res.render('work-with-us')
 })
 
 //ABOUT-US PAGE

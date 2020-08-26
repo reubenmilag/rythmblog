@@ -1,0 +1,109 @@
+<div class="container-fluid m-0 p-0 bg-dark h-auto">
+    <nav class="nav super-wide navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top" alt="" loading="lazy">
+            <span class="navbar-brand pl-2">Healthy Rythm</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto mr-0 pr-0">
+                <a class="nav-item nav-link px-4" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link px-4" id="page2" href="/blogs:">Blog</a>
+                <a class="nav-item nav-link p-4 active" id="page3" href="/services">Services</a>
+                <a class="nav-item nav-link px-4" id="page4" href="/about-us">About</a>                    
+                <a class="nav-item nav-link px-4" id="page5" href="/contact-us">Contact</a>
+            </div>
+        </div>          
+    </nav>
+    <img src="/assets/login-imagebar.png" alt="login-imagebar" class="img-fluid m-0 p-0 w-100">
+</div>
+
+
+
+<div class="container-fluid font-secondary my-3 wide">
+    <h5 class="work-with-us-breadcrumbs"><a href="/services" class="text-decoration-none text-dark work-with-us-breadcrumbs-origin">SERVICES &nbsp;</a>> WORK WITH ME</h5>
+</div>
+
+
+<div class="container-fluid my-5 pb-md-3 wide font-primary">
+    <h3 class="workWithUs-mainTitle py-3">Ways we can work together</h3>
+    <h5 class="workWithUs-intro">We at Healthy Rythm are dedicated to delivering the best in health and<br> nutrition to our clients. Read the section down blow to know about<br> some ways that we can work together.</h5>
+</div>
+
+<div class="container-fluid wide row my-5 pt-md-5 border border-left-0 border-right-0 border-bottom-0">
+    <div class="col-12 col-md-6 font-secondary my-5">
+        <h4 class="workWithUs-title">BRAND SPONSORSHIPS</h4>
+        <p class="workWithUs-para py-3 px-5">
+            Have a product or service you think the Healthy Rythm audience would love? We can create blog and/or social media posts with beautiful photography featuring your product. We will work together to get your brand noticed, be it on this blog, our Instagram feed and stories,  or other platforms. Short-term and long-term sponsorships are available.
+        </p>
+    </div>
+
+    <div class="col-12 col-md-6 my-5">
+        <h4 class="workWithUs-title">RECIPE DEVELOPMENT</h4>
+        <p class="workWithUs-para py-3 px-5">
+            Need a freelancer to develop recipes for your food or health brand? We are available to develop and test recipes using your products. We will work together to brainstorm recipe ideas based on your brand’s needs that your audience is sure to enjoy.
+        </p>
+    </div>
+</div>
+<div class="container-fluid wide row my-5">
+    <div class="col-12 col-md-6 font-secondary workWithUs-imageContainer">
+        <img src="/assets/work-with-me-regina.jpg" alt="regina pinheiro" class="img-fluid workWithUs-image">
+    </div>
+
+    <div class="col-12 col-md-6">
+        <h4 class="workWithUs-title align-top">CONTENT WRITING</h4>
+        <p class="workWithUs-para py-3 px-5">
+            Need a freelancer to develop blogs or articles for your food or health brand? We are available to write articles using your products. We will work together to  get the best content based on your brand’s needs that your audience is sure to enjoy.
+        </p>
+    </div>
+</div>
+
+
+
+<div class="container-fluid bg-ivory mt-5 pt-5">
+    <div class="container-fluid wide mt-5 pt-5 font-primary" id="workWithUs-formContainer">
+        <h3 class="workWithUs-mainTitle pt-5">It will be awesome working together!</h3>
+        <h5 class="workWithUs-intro">Please fill out the form below to ask any questions or discuss working together</h5>
+        <form class="m-0 font-secondary p-0 p-md-5 mx-0 mx-md-5" id="workWithUs-form" action="/formHandling/work-with-us" method="POST">
+            <%- include('../views/partials/workWithUs_messages.ejs') %>
+            <div class="form-row">
+                <div class="form-group col-12 col-md-6">
+                  <label for="workWithUs_name">FULL NAME</label>
+                  <input type="text" class="form-control" id="workWithUs_name" name="workWithUs_name">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                  <label for="workWithUs_phone">PHONE NUMBER</label>
+                  <input type="number" class="form-control" id="workWithUs_phone" name="workWithUs_phone">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12 col-md-6">
+                  <label for="workWithUs_emailAddress">EMAIL ADDRESS</label>
+                  <input type="text" class="form-control" id="workWithUs_emailAddress" name="workWithUs_emailAddress">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                  <label for="workWithMe_brandName">BRAND NAME</label>
+                  <input type="text" class="form-control" id="workWithMe_brandName" name="workWithMe_brandName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="workWithMe_message">TELL ME MORE</label>
+                <textarea rows="5" class="form-control" id="workWithMe_message" name="workWithMe_message"></textarea>
+            </div>
+            <button type="submit" class="btn bg-dark text-light">SEND FORM</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid bg-nyanza">
+    <div class="container-fluid wide row font-primary">
+        <a href="/blogs:" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark">see our blogs &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
+        <a href="/about-us" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark bottom-links-right">know more about us &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
+    </div>
+</div>
+<%- include ('../views/partials/mailingListBlock.ejs') %>

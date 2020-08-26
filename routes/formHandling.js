@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mailingList = require('../models/mailingListModel')
 const blogs = require('../models/blogModel')
+const workWithUs = require('../models/workWithUsModel')
 const contactUsMessage = require('../models/contactUsModel')
 const { check, validationResult } = require('express-validator');
 const nodemailer = require('nodemailer')
@@ -74,6 +75,45 @@ router.post('/contact-us',  [check('contactUs_email').isEmail()], async(req, res
             console.log(error)
         }
     }
+})
+
+
+
+
+//WORK WITH US FORM HANDLE
+router.post('/work-with-us', [check('workWithUs_emailAddress').isEmail()], async(req, res) => {
+    let workWithUsFormErrors = []
+    
+    const workWithUsData = new workWithUs ({
+        workWithUs_name: req.body.workWithUs_name,
+        workWithUs_phone: req.body.workWithUs_phone,
+        workWithUs_emailAddress: req.body.workWithUs_emailAddress,
+        workWithMe_brandName: req.body.workWithMe_brandName,
+        workWithMe_message: req.body.workWithMe_message
+    })
+
+    if (!workWithUsData.workWithUs_name || !workWithUsData.workWithUs_phone || !workWithUsData.workWithUs_emailAddress || !workWithUsData.workWithMe_brandName || !workWithUsData.workWithMe_message ) {
+        workWithUsFormErrors.push({ msg: 'Please fill all fields' })
+    }
+
+    //CHECK IS EMAIL IS VALID
+    const error = validationResult(req)
+    if (!error.isEmpty()) {
+        workWithUsFormErrors.push ({ msg: "Please enter a valid Email address" })
+    }
+
+    if (workWithUsFormErrors.length > 0) {
+        res.render('work-with-us', ({ workWithUsFormErrors }))
+    } else {
+        try{
+            const workWithUsElement  = workWithUsData.save() 
+            req.flash('workWithUsSuccess_msg', 'Thankyou for your interest. We are excited to work with you! Our team will contact you soon.')
+            res.redirect('/work-with-us#workWithUs-formContainer')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 })
 
 
