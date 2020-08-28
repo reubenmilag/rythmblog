@@ -123,6 +123,11 @@ router.get('/services', (req, res) => {
     res.render('services')
 })
 
+router.get('/services-booking:para', (req, res) => {
+    console.log(req.params.para)
+    res.render('services-booking')
+})
+
 //WORK WITH US PAGE
 router.get('/work-with-us', (req, res) => {
     res.render('work-with-us')
@@ -141,6 +146,15 @@ router.get('/contact-us', (req, res) => {
     res.render('contact-us')
 })
 
+//DOWNLOAD BUSINESS CARD ROUTE
+router.get('/card', async (req, res) => {
+    try {
+        res.download(__dirname + '../../public/assets/Regina Pinheiro Card.pdf')
+    } catch (err) {
+        console.log(err)
+        res.render('contact-us')
+    }
+})
 
 
 

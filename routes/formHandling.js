@@ -4,6 +4,7 @@ const mailingList = require('../models/mailingListModel')
 const blogs = require('../models/blogModel')
 const workWithUs = require('../models/workWithUsModel')
 const contactUsMessage = require('../models/contactUsModel')
+const serviceRequest = require('../models/serviceRequest')
 const { check, validationResult } = require('express-validator');
 const nodemailer = require('nodemailer')
 
@@ -78,6 +79,16 @@ router.post('/contact-us',  [check('contactUs_email').isEmail()], async(req, res
 })
 
 
+/* //DOWNLOAD BUSINESS CARD ROUTE
+router.get('/card', async (req, res) => {
+    try {
+        res.download('/assets/Regina Pinheiro Card.pdf')
+    } catch (err) {
+        console.log(err)
+    }
+}) */
+
+
 
 
 //WORK WITH US FORM HANDLE
@@ -115,6 +126,113 @@ router.post('/work-with-us', [check('workWithUs_emailAddress').isEmail()], async
     }
 
 })
+
+
+
+
+
+
+
+/* SCHEDULE A SESSION FORM */
+router.post('/servicesForm', [check('userEmail').isEmail()], async(req, res) => {
+    let errors = []
+    const userName = req.body.userName
+    const userPhone = req.body.userPhone
+    const userEmail = req.body.userEmail
+    const SOI = req.body.SOI
+    const userDate = req.body.userDate
+    const TimeSlot = req.body.TimeSlot
+    const userMessage = req.body.userMessage
+
+    const request = new serviceRequest ({
+        userName: userName,
+        userPhone: userPhone,
+        userEmail: userEmail,
+        SOI: SOI,
+        userDate: userDate,
+        TimeSlot: TimeSlot,
+        userMessage: userMessage
+    })
+
+    if (!userName || !userPhone || !userEmail || !userPhone || !SOI || !userDate || !TimeSlot ) {
+        errors.push({ msg: "Please fill all fields" })
+    }
+
+    if (SOI == 'service1') {
+        SOI_text = 'Diet Prescription'
+    }
+    if (SOI == 'service2') {
+        SOI_text = 'Preventive Diet'
+    }
+    if (SOI == 'service3') {
+        SOI_text = 'Workshops'
+    }
+    if (SOI == 'service4') {
+        SOI_text = 'Sports Nutrition'
+    }
+    if (SOI == 'service5') {
+        SOI_text = 'Lifestyle Modification<'
+    }
+    if (SOI == 'service6') {
+        SOI_text = 'Customized Diet Plans'
+    }
+    if (SOI == 'service7') {
+        SOI_text = 'Health Risk Assessment'
+    }
+    if (SOI == 'service8') {
+        SOI_text = 'Nutritional Counselling'
+    }
+
+    if (!userMessage) {
+        userMessage_text = 'no message'
+    } else {
+        userMessage_text = userMessage
+    }
+
+
+    //CHECK IF DATE IS VALID
+
+    let date_today = new Date()   
+    let date = ("0" + date_today.getDate()).slice(-2);
+    let month = ("0" + (date_today.getMonth() + 1)).slice(-2);
+    let year = date_today.getFullYear();
+    final_date = year + "-" + month + "-" + date
+
+    if (userDate < final_date) {
+        errors.push({ msg: "The date is not a valid date" })
+    }
+
+
+
+
+    //CHECK IS EMAIL IS VALID
+    const error = validationResult(req)
+    if (!error.isEmpty()) {
+        console.log(error)
+        errors.push ({ msg: "Please enter a valid Email address" })
+    }
+
+    if (errors.length > 0) {
+        res.render('services-booking', ({ errors }))
+    } else {
+        try{
+            const serviceRequest = request.save() 
+            req.flash('success_msg', 'Request sent successfully. We will get in touch with you soon.')
+            res.redirect('/services-booking')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+})
+
+
+
+
+
+
+
 
 
 

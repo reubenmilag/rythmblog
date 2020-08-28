@@ -1,0 +1,158 @@
+<div class="container-fluid m-0 p-0 bg-dark h-auto">
+    <nav class="nav super-wide navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top" alt="Healthy Rythm Logo" loading="lazy">
+            <span class="navbar-brand pl-2">Healthy Rythm</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto mr-0 pr-0">
+                <a class="nav-item nav-link px-4" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link px-4" id="page2" href="/blogs:">Blog</a>
+                <a class="nav-item nav-link p-4 active" id="page3" href="/services">Services</a>
+                <a class="nav-item nav-link px-4" id="page4" href="/about-us">About</a>                    
+                <a class="nav-item nav-link px-4" id="page5" href="/contact-us">Contact</a>
+            </div>
+        </div>          
+    </nav>
+    <img src="/assets/login-imagebar.png" alt="services-imagebar" class="img-fluid m-0 p-0 w-100">
+</div>
+
+
+
+<div class="container-fluid wide my-5 pb-md-5">
+    <div class="container-fluid row m-0 p-0">
+        <div class="col-12 col-md-9 mb-auto p-0 pr-md-4 bookingContainer row">
+            <div class="container bookingContainer1 bg-white col-12 col-md-6 border border-left-0 border-bottom-0 border-top-0 p-3">
+                <small class="text-muted">Regina Pinherio</small>
+                <p class="header" id="SOIFormTopic">60 Minute Slot</p>
+                <small class="text-muted"><i class="far fa-clock"></i>   1 hr</small><br>
+                <small class="text-muted SOISecondayInfo" id="SOISecondayInfo1"><i class="far fa-calendar-check"></i>   <span id="SOISecondayInfoDateTime"></span></small>
+                <small class="text-muted SOISecondayInfo" id="SOISecondayInfo2"><i class="fas fa-globe-asia"></i>   Indian Standard Time</small><br>
+            </div>
+            <div class="container bookingContainer2 bg-white col-12 col-md-6 py-4 px-4">
+                <p class="header" id="SOIFormTitle">Choose a Date and Time</p>
+                <br>
+                <%- include ('./partials/messages') %>  
+                <form action="/formHandling/servicesForm" id="appointmentsForm" method="POST">
+                    <div class="container-fluid m-0 p-0" id="SOI-firstForm">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Date:</label>
+                            <input type="date" class="form-control" id="userSelectedDate" name="userDate" aria-describedby="" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Time:</label>
+                            <!-- <input type="time" class="form-control" id="userSelectedTime" name="userTime" aria-describedby=""> -->
+                            <select id="userSelectedTimeSlot" class="form-control" name="TimeSlot" required>
+                            <option class="pt-5" disabled selected>select...</option>
+                            <option class="pt-5" value="09:00AM - 10:00AM">09:00 AM</option>
+                            <option class="pt-5" value="10:00AM - 11:00AM">10:00 AM</option>
+                            <option class="pt-5" value="11:00AM - 12:00PM">11:00 AM</option>
+                            <option class="pt-5" value="12:00PM - 01:00PM">12:00 AM</option>
+                            <option class="pt-5" value="01:00PM - 02:00PM" disabled>01:00 AM</option>
+                            <option class="pt-5" value="02:00PM - 03:00PM">02:00 PM</option>
+                            <option class="pt-5" value="03:00PM - 04:00PM">03:00 PM</option>
+                            <option class="pt-5" value="04:00PM - 05:00PM">04:00 PM</option>
+                            <option class="pt-5" value="05:00PM - 06:00PM">05:00 PM</option>
+                            <option class="pt-5" value="06:00PM - 07:00PM">06:00 PM</option>
+                            <option class="pt-5" value="07:00PM - 08:00PM">07:00 PM</option>
+                            <option class="pt-5" value="08:00PM - 09:00PM">08:00 PM</option>
+                            <option class="pt-5" value="09:00PM - 10:00PM">09:00 PM</option>
+                            </select>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="container-fluid m-0 p-0 SOISecondayInfo" id="SOI-secondForm">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Name:</label>
+                            <input type="text" class="form-control" id="userName" name="userName" aria-describedby="">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputName1">Phone No.:</label>
+                            <input type="text" class="form-control" id="userPhone" name="userPhone" aria-describedby="">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address:</label>
+                            <input type="email" class="form-control" id="userEmail" name="userEmail"  aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email or phone details with anyone else.</small>
+                          </div>
+                    </div>
+                    <div class="container-fluid m-0 p-0 SOISecondayInfo" id="SOI-thirdForm">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Service of Interest:</label>
+                            <select id="inputState" class="form-control" name="SOI">
+                              <option disabled selected>Choose...</option>
+                              <option id="serviceOption1" value="service1">Diet Prescription</option>
+                              <option id="serviceOption2" value="service2">Preventive Diet</option>
+                              <option id="serviceOption3" value="service3">Workshops</option>
+                              <option id="serviceOption4" value="service4">Sports Nutrition</option>
+                              <option id="serviceOption5" value="service5">Lifestyle Modification</option>
+                              <option id="serviceOption6" value="service6">Customized Diet Plans</option>
+                              <option id="serviceOption7" value="service7">Health Risk Assessment</option>
+                              <option id="serviceOption8" value="service8">Nutritional Counselling</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-4">
+                          <label for="exampleInputEmail1">Please share anything that will help me prepare for our meeting:</label>
+                          <textarea class="form-control" id="userMessage" name="userMessage"></textarea>
+                        </div>
+                    </div>
+                    <div class="container-fluid m-0 p-0 SOISecondayInfo" id="SOI-fourthForm">
+                        <div class="form-group">
+                            <label class="text-muted" for="exampleInputName1">Date.:</label> <span class="" id="confirmDate"></span><br>
+                            <label class="text-muted" for="exampleInputName1">Time.:</label> <span class="" id="confirmTime"></span><br>
+                            <label class="text-muted" for="exampleInputName1">Phone No.:</label> <span class="" id="confirmPhoneNo"></span><br>
+                            <label class="text-muted" for="exampleInputName1">Email Id.:</label> <span class="" id="confirmEmail"></span><br>
+                            <label class="text-muted" for="exampleInputName1">Payment.:</label> <span class="" id="confirmPrice">&#8377;1000</span><br>
+                        </div>
+                    </div>
+    
+                </form>        
+                <!-- first form -->
+                <button onclick="timeslotConfirmation()" class="btn text-light float-right mt-4" style="background-color: #1A936F;" id="SOI-firstConfirm"><span class="font-weight-bold ">Confirm</span></button>
+                <!-- second form -->
+                <button onclick="personalDetailsBack()" class="btn text-light float-left mt-4 btn-secondary SOISecondayInfo" id="SOI-firstBack"><span class="font-weight-bold ">Back</span></button>
+                <button onclick="onPersonalDetailsConfirmation()" class="btn text-light float-right mt-4 SOISecondayInfo"  id="SOI-secondConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
+                <!-- third form btns -->
+                <button onclick="meetingDetailsBack()" class="btn text-light float-left mt-4 btn-secondary SOISecondayInfo" id="SOI-secondBack"><span class="font-weight-bold ">Back</span></button>
+                <button onclick="onMeetingDetailsConfirmation()" class="btn text-light float-right mt-4 SOISecondayInfo"  id="SOI-thirdConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
+                <!-- fourth form btns -->
+                <button onclick="paymentDetailsBack()" class="btn text-light float-left mt-4 btn-secondary SOISecondayInfo" id="SOI-thirdBack"><span class="font-weight-bold ">Back</span></button>
+                <button onclick="document.getElementById('appointmentsForm').submit()" class="btn text-light float-right mt-4 SOISecondayInfo"  id="SOI-fourthConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="col-12 col-md-3 m-0 p-0">
+            <div class="card w-100 bg-ivory m-0 border-0 h-100 servicesBooking-featuredCard font-primary">
+                <h4 class="blog-featuredCard-header servicesBooking-featuredCard-header mt-4 mb-3">Featured Blog</h4>
+                <div class="mx-3 mb-3" onclick="window.location.href='/blog/nutrition-week';">
+                    <img src="/assets/blog-assets/348415b4ae05a0a81ee044798141106a" alt="" class="img-fluid blog-featuredBlogImage w-100">
+                    <h5 class="blog-featuredBlogTitle">nutrition week</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container-fluid bg-nyanza mt-5">
+    <div class="container-fluid wide row font-primary">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=reginapinheiro19@gmail.com" target="_blank" class="text-decoration-none container-fluid m-0 col-12 col-md-6 bottom-links h-100 p-5 text-dark bottom-links-left">
+            <span class="font-primary bottom-links-emailBtn m-0">feel free to contact me at</span>
+            <h5 class="font-weight-bold">reginapinheiro19@gmail.com</h5>
+        </a>
+        <!-- <a href="/blogs" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links h-100 p-5 text-dark">see our blogs &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a> -->
+        <a href="/work-with-us" class="text-decoration-none container-fluid col-12 col-md-6 bottom-links m-auto p-5 text-dark h-100">work with us &nbsp;<i class="fas fa-arrow-right bottom-links-icon"></i></a>
+    </div>
+</div>
+
+
+
+<%- include('../views/partials/mailingListBlock.ejs') %>

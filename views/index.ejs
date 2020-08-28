@@ -104,7 +104,7 @@
     <div class="row row-cols-1 row-cols-md-4 wide">
       <% latestBlogs.forEach( blog => { %>
         <div class="col mb-2">
-          <div class="card latestblogs-card mb-5 border-0">
+          <div class="card latestblogs-card mb-5 border-0" onclick="window.location.href='/blog/<%= blog.blog_link %>';">
             <img src="/assets/blog-assets/<%= blog.blog_imageName %>" class="card-img-top img-fluid m-0 p-0 latestblogs-image" alt="...">
             <div class="card-body latestblogs-title font-primary">
               <h5 class="card-title m-0"><%= blog.blog_title %></h5>
@@ -114,7 +114,7 @@
       <% }) %>
     </div>
     <div class="container-fluid wide latestBlogs-allBtn mb-5">
-      <a href="#" class="text-decoration-none latestBlogs-allBtn">view all blogs</a>
+      <a href="/blogs:" class="text-decoration-none latestBlogs-allBtn">view all blogs</a>
     </div>
   </div>
 
