@@ -58,7 +58,18 @@ function onPersonalDetailsConfirmation() {
     document.getElementById('SOI-secondBack').style.display = "block";
     document.getElementById('SOI-thirdConfirm').style.display = "block";
     document.getElementById('SOIFormTitle').innerHTML = "Enter Meeting Details";
+
+    
+    /* FOR PRESELECTNG VALUES FOR SELECT OPTION TAG */
+    const params = new URLSearchParams(window.location.search)
+    if (params.has('SOI')) {
+        SOIValue = params.get('SOI')
+        $("#" + SOIValue).attr("selected", "");
+    } else {
+        console.log('not')
+    }
 }
+
 
 function meetingDetailsBack() {
     document.getElementById('SOI-secondForm').style.display = "block";
@@ -69,6 +80,14 @@ function meetingDetailsBack() {
     document.getElementById('SOI-thirdConfirm').style.display = "none";
     document.getElementById('SOIFormTitle').innerHTML = "Enter Personal Details";
 }
+
+/* function onSOIChange() {
+    if (document.getElementById('inputState').value == 'workshops') {
+        document.getElementById('confirmPrice').innerHTML = 'Charges vary as per sessions.'
+    } else {
+        document.getElementById('confirmPrice').innerHTML = '&#8377;1500';        
+    }
+} */
 
 function onMeetingDetailsConfirmation() {
     document.getElementById('SOI-thirdForm').style.display = "none";
@@ -84,6 +103,11 @@ function onMeetingDetailsConfirmation() {
     document.getElementById('confirmTime').innerHTML = TimeSlotValue2.value;
     document.getElementById('confirmPhoneNo').innerHTML = userPhoneValue.value;
     document.getElementById('confirmEmail').innerHTML = userEmailValue.value;
+    if (document.getElementById('inputState').value == 'workshops') {
+        document.getElementById('confirmPrice').innerHTML = 'Charges vary as per sessions.'
+    } else {
+        document.getElementById('confirmPrice').innerHTML = '&#8377;1500';        
+    }
 }
 
 function paymentDetailsBack() {
@@ -95,3 +119,63 @@ function paymentDetailsBack() {
     document.getElementById('SOI-fourthConfirm').style.display = "none";
     document.getElementById('SOIFormTitle').innerHTML = "Enter Meeting Details";
 }
+
+
+
+$(document).ready(function(){
+    $('.toast').toast('show', {
+        autohide: false
+    })
+});
+
+
+/* function onServicesBooking(SOI)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == SOI){return pair[1];}
+        }
+        console.log(SOI)    
+        console.log(query)
+        console.log(pair[1])
+        console.log('fin pair')
+        document.getElementById(':diet-prescription').removeAttribute("selected");
+        document.getElementById(':preventive-diet').removeAttribute("selected");
+        document.getElementById(':workshops').removeAttribute("selected");
+        document.getElementById(':sports-nutrition').removeAttribute("selected");
+        document.getElementById(':lifestyle-modification').removeAttribute("selected");
+        document.getElementById(':custom-dietplans').removeAttribute("selected");
+        document.getElementById(':healthrisk-accessment').removeAttribute("selected");
+        document.getElementById(':nutritional-counselling').removeAttribute("selected");
+        document.getElementById('inputState').option(SOI).setAttribute("selected", "");
+
+        if ( SOI == ':SOI=preventive-diet' ) {
+            document.getElementById('inputState').option[5].selected="true";
+        } else {
+            console.log('in else')
+        }
+
+}  */
+
+
+
+function onServicesBooking(params) {
+    console.log(params)
+}
+
+
+
+
+/* function preselectedOption(optionSelected) {
+    document.getElementById('serviceOption1').removeAttribute("selected");
+    document.getElementById('serviceOption2').removeAttribute("selected");
+    document.getElementById('serviceOption3').removeAttribute("selected");
+    document.getElementById('serviceOption4').removeAttribute("selected");
+    document.getElementById('serviceOption5').removeAttribute("selected");
+    document.getElementById('serviceOption6').removeAttribute("selected");
+    document.getElementById('serviceOption7').removeAttribute("selected");
+    document.getElementById('serviceOption8').removeAttribute("selected");
+    document.getElementById(optionSelected).setAttribute("selected", "");
+} */

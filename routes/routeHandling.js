@@ -124,7 +124,6 @@ router.get('/services', (req, res) => {
 })
 
 router.get('/services-booking:para', (req, res) => {
-    console.log(req.params.para)
     res.render('services-booking')
 })
 

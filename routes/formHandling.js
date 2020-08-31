@@ -12,8 +12,11 @@ const nodemailer = require('nodemailer')
 let blogQuery = blogs.find().sort({blog_uploadDate: 'desc'}).limit(4)
 
 
+
+/* FOR MALING LIST SUBSCRIBERS */
 router.post('/mailingList', [check('mailingEmail').isEmail()], async(req, res) => {
     let errors = []
+
     const newSubscriber = new mailingList ({
         mailingRecepient: req.body.mailingName,
         mailingEmail: req.body.mailingEmail
@@ -23,7 +26,7 @@ router.post('/mailingList', [check('mailingEmail').isEmail()], async(req, res) =
         errors.push({ msg: "Please fill in all the details." })
     }
 
-    //CHECK IS EMAIL IS VALID
+    //check if email is valid
     const error = validationResult(req)
     if (!error.isEmpty()) {
         errors.push ({ msg: "Please enter a valid Email address" })
@@ -44,6 +47,8 @@ router.post('/mailingList', [check('mailingEmail').isEmail()], async(req, res) =
 })
 
 
+
+
 //CONTACT PAGE FORM HANDLING
 router.post('/contact-us',  [check('contactUs_email').isEmail()], async(req, res) => {
     let contactFormErrors = []
@@ -58,7 +63,7 @@ router.post('/contact-us',  [check('contactUs_email').isEmail()], async(req, res
         contactFormErrors.push({ msg: 'Please fill all fields' })
     }
 
-    //CHECK IS EMAIL IS VALID
+    //check if email is valid
     const error = validationResult(req)
     if (!error.isEmpty()) {
         contactFormErrors.push ({ msg: "Please enter a valid Email address" })
@@ -77,17 +82,6 @@ router.post('/contact-us',  [check('contactUs_email').isEmail()], async(req, res
         }
     }
 })
-
-
-/* //DOWNLOAD BUSINESS CARD ROUTE
-router.get('/card', async (req, res) => {
-    try {
-        res.download('/assets/Regina Pinheiro Card.pdf')
-    } catch (err) {
-        console.log(err)
-    }
-}) */
-
 
 
 
@@ -158,30 +152,6 @@ router.post('/servicesForm', [check('userEmail').isEmail()], async(req, res) => 
         errors.push({ msg: "Please fill all fields" })
     }
 
-    if (SOI == 'service1') {
-        SOI_text = 'Diet Prescription'
-    }
-    if (SOI == 'service2') {
-        SOI_text = 'Preventive Diet'
-    }
-    if (SOI == 'service3') {
-        SOI_text = 'Workshops'
-    }
-    if (SOI == 'service4') {
-        SOI_text = 'Sports Nutrition'
-    }
-    if (SOI == 'service5') {
-        SOI_text = 'Lifestyle Modification<'
-    }
-    if (SOI == 'service6') {
-        SOI_text = 'Customized Diet Plans'
-    }
-    if (SOI == 'service7') {
-        SOI_text = 'Health Risk Assessment'
-    }
-    if (SOI == 'service8') {
-        SOI_text = 'Nutritional Counselling'
-    }
 
     if (!userMessage) {
         userMessage_text = 'no message'

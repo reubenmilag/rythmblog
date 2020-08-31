@@ -34,6 +34,10 @@ html, body {
     background-color: #141212 !important;
 }
 
+.bg-darkGrey {
+    background-color: #333333 !important;
+}
+
 .bg-ivory {
     background-color: #F2F6EA !important;
 }
@@ -538,18 +542,27 @@ nav a:hover {
 }
 
 .contactUs-secondaryContainer1 {
-    background-image: url(/assets/snazzy-image6.png);
+    background-image: url(/assets/snazzy-image.png);
     background-size: cover;
 }
 
-.row-eq-height {
-    display: flex;
-}
 
 @media (max-width: 576px) { 
     .contactUs-FormContainer {
         border: none !important;
     }
+}
+
+.toastContainer {
+    position: relative;
+    z-index: 100 !important;
+}
+
+.toast {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    z-index: 150 !important;
 }
 
 .contactUs-header {
