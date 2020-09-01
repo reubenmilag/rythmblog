@@ -88,7 +88,7 @@
       <% latestBlogs.forEach( blog => { %>
         <div class="col mb-2">
           <div class="card latestblogs-card mb-5 border-0" onclick="window.location.href='/blog/<%= blog.blog_link %>';">
-            <img src="/assets/blog-assets/<%= blog.blog_imageName %>" class="card-img-top img-fluid m-0 p-0 latestblogs-image" alt="...">
+            <img src="/assets/blog-assets/<%= blog.blog_imageName %>" class="card-img-top img-fluid m-0 p-0 latestblogs-image" alt="<%= blog.blog_title %>">
             <div class="card-body latestblogs-title font-primary">
               <h5 class="card-title m-0"><%= blog.blog_title %></h5>
             </div>
@@ -96,7 +96,7 @@
         </div>
       <% }) %>
     </div>
-    <div class="container-fluid wide latestBlogs-allBtn mb-5">
+    <div class="container-fluid wide latestBlogs-allBtn mb-5" onclick="window.location.href='/blogs:';">
       <a href="/blogs:" class="text-decoration-none latestBlogs-allBtn">view all blogs</a>
     </div>
   </div>
