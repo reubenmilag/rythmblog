@@ -34,9 +34,9 @@
             <h6 class="font-secondary blog-blogTags"><%= Blog.blog_primaryTag %>&nbsp;|&nbsp;<%= Blog.blog_secondaryTag %></h6>
             <br>
             <img src="/assets/blog-assets/<%= Blog.blog_imageName %>" alt="blog_image" class="img-fluid blog-blogImage p-sm-0 pr-md-3">
-            <p class="font-secondary blog-blogBody my-4 p-0 pl-md-1 pr-md-4 text-dark">
-                <%= Blog.blog_body %>
-            </p>
+            <div class="container-fluid font-secondary blog-blogBody my-4 p-0 pl-md-1 pr-md-4 text-dark">
+                <%- Blog.blog_body %>
+            </div>
 
 
 
@@ -45,12 +45,12 @@
                 <% if (!prevBlog) { %>
                     <a class="blog-BtnDisabled" aria-disabled="true">PREVIOUS</a>
                 <% } else { %>
-                    <a href="/blog/<%= prevBlog.blog_link %>" class="btn px-3 float-left d-inline-block text-dark blog-prevBtn">PREVIOUS</a>                    
+                    <a href="/blog/<%= prevBlog.blog_link %>" class="shadow-none btn px-3 float-left d-inline-block text-dark blog-prevBtn">PREVIOUS</a>                    
                 <% } %>
                 <% if (!nextBlog) { %>
                     <a class="blog-BtnDisabled">NEXT</a>
                 <% } else { %>
-                    <a href="/blog/<%= nextBlog.blog_link %>" class="btn px-3 float-right d-inline-block text-dark blog-prevBtn">NEXT</a>                    
+                    <a href="/blog/<%= nextBlog.blog_link %>" class="shadow-none btn px-3 float-right d-inline-block text-dark blog-prevBtn">NEXT</a>                    
                 <% } %>
             </div>
         </div>
@@ -67,11 +67,11 @@
             <br>
             <div class="card w-100 bg-ivory m-0 border-0 blog-featuredCard font-primary">
                 <h4 class="blog-featuredCard-header my-4">Featured Blogs</h4>
-                <div class="mx-3 mb-3" onclick="window.location.href='/blog/nutrition-week';">
+                <div class="mx-3 mb-3 pointerOnHover blog-featuredBlogCard" onclick="window.location.href='/blog/nutrition-week';">
                     <img src="/assets/blog-assets/348415b4ae05a0a81ee044798141106a" alt="" class="img-fluid blog-featuredBlogImage">
                     <h5 class="blog-featuredBlogTitle">nutrition week</h5>
                 </div>
-                <div class="mx-auto mb-2" onclick="window.location.href='/blog/superfoods';">
+                <div class="mx-auto mb-2 pointerOnHover blog-featuredBlogCard" onclick="window.location.href='/blog/superfoods';">
                     <img src="/assets/blog-assets/e95a0b9e3de28c1634061dfc036088e8" alt="" class="img-fluid  blog-featuredBlogImage">
                     <h5 class="blog-featuredBlogTitle">superfoods</h5>
                 </div>
@@ -81,11 +81,11 @@
 
     <div class="container-fluid row mt-4 mx-0 p-0">
         <img src="/assets/work-with-me-regina.jpg" alt="Regina Pinheiro" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/about-us';">
-        <img src="/assets/blog-imageLink-nutritionalCouncelling.jpg" alt="" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/services#Nutritional-councelling';">
-        <img src="/assets/blog-assets/348415b4ae05a0a81ee044798141106a" alt="" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/blog/nutrition-week';">
-        <img src="/assets/blog-imageLink-customDiets.jpg" alt="" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/work-with-us#recipe-development';"">
-        <img src="/assets/blog-assets/e95a0b9e3de28c1634061dfc036088e8" alt="" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/blog/superfoods';">
-        <img src="/assets/blog-imageLink-contentWriting.jpg" alt="" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/work-with-us#content-writing';">
+        <img src="/assets/blog-imageLink-nutritionalCouncelling.jpg" alt="Nutritional Counselling" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/services#Nutritional-councelling';">
+        <img src="/assets/blog-assets/348415b4ae05a0a81ee044798141106a" alt="Nutrition week" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/blog/nutrition-week';">
+        <img src="/assets/blog-imageLink-customDiets.jpg" alt="Diets" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/work-with-us#recipe-development';"">
+        <img src="/assets/blog-assets/e95a0b9e3de28c1634061dfc036088e8" alt="superfoods" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/blog/superfoods';">
+        <img src="/assets/blog-imageLink-contentWriting.jpg" alt="content writing" class="img-fluid col-12 col-md-2 m-0 p-0 blog-bottomImageLinks" onclick="window.location.href='/work-with-us#content-writing';">
     </div>
 
     

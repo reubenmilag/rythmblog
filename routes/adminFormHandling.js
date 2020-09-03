@@ -18,6 +18,8 @@ const upload = multer({
         callback(null, imageMimeTypes.includes(file.mimetype))
     }
 })
+var sanitizeHtml = require("sanitize-html")
+ 
 
 
 
@@ -44,7 +46,19 @@ router.post('/upload-blog', ensureAdminAuthenticated, upload.single('blog_image'
         res.render('dashboard', { errors })
     }
 
-    const blog_link = req.body.blog_title.replace(/ /g, '-')
+    const blog_link = req.body.blog_title.replace(/ /g, '-') 
+    
+    var blogBody_dirty = req.body.mytextarea;
+    // Allow only a super restricted set of tags and attributes
+    blogBody_clean = sanitizeHtml(blogBody_dirty, {
+        allowedTags: [ 'b', 'i', 'strong', 'a', 'br', 'div', 'sup', 'sub', 'table', 'tbody', 'td', 'th', 'tr', 'td', 'ol', 'ul', 'li', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ],
+        disallowedTagsMode: 'discard',
+        allowedAttributes: {
+        '*': [ 'href', 'alt', 'center', 'style' ],
+        },
+        enforceHtmlBoundary: true
+    });
+  
 
     const blog = new Blog ({
         blog_title: req.body.blog_title,
@@ -54,7 +68,7 @@ router.post('/upload-blog', ensureAdminAuthenticated, upload.single('blog_image'
         blog_imageMimeType: blog_imageMimeType,
         blog_primaryTag: req.body.blog_primaryTag,
         blog_secondaryTag: req.body.blog_secondaryTag,
-        blog_body: req.body.blog_body
+        blog_body: blogBody_clean
     })
 
     //check if all fields are filled

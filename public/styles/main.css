@@ -225,6 +225,20 @@ nav a:hover {
     }
 }
 
+.toast-container {
+    position: fixed;
+    bottom: 3%;
+    right: 1%;
+    z-index: 150;
+}
+
+.toast {
+    z-index: 200;
+}
+
+.pointerOnHover {
+    cursor: pointer;
+}
 
 
 .footer-bs {
@@ -572,18 +586,6 @@ nav a:hover {
     }
 }
 
-.toastContainer {
-    position: relative;
-    z-index: 100 !important;
-}
-
-.toast {
-    position: absolute;
-    right: 1%;
-    top: 1%;
-    z-index: 150 !important;
-}
-
 .contactUs-header {
     font-style: normal;
     font-weight: normal;
@@ -663,6 +665,14 @@ nav a:hover {
     border-color: #D9E4C8 !important;
     outline: none !important;
     box-shadow: none !important;
+}
+
+.blogs-card {
+    transition: all 0.3s;
+}
+
+.blogs-card:hover .blogs-image {
+    opacity: 0.93;
 }
 
 .blogs-image {
@@ -752,6 +762,7 @@ nav a:hover {
     line-height: 34px;
     /* or 211% */
     letter-spacing: 0.01em;
+    white-space: pre-wrap;
 }
 
 .blog-featuredCard-header {
@@ -767,6 +778,15 @@ nav a:hover {
 .blog-featuredBlogImage {
     height: 15rem;
     width: 15rem;
+}
+
+.blog-featuredBlogCard img {
+    opacity: 0.95;
+    transition: all 0.2s;
+}
+
+.blog-featuredBlogCard:hover img{
+    opacity: 1;
 }
 
 .blog-featuredBlogTitle {
@@ -805,6 +825,12 @@ nav a:hover {
 
 .blog-bottomImageLinks {
     height: 15rem;
+    transition: all 0.3s;
+}
+
+.blog-bottomImageLinks:hover {
+    opacity: 0.9;
+    cursor: pointer;
 }
 
 

@@ -15,7 +15,7 @@ let blogQuery = blogs.find().sort({blog_uploadDate: 'desc'}).limit(4)
 
 /* FOR MALING LIST SUBSCRIBERS */
 router.post('/mailingList', [check('mailingEmail').isEmail()], async(req, res) => {
-    let errors = []
+    let mailingListErrors = []
 
     const newSubscriber = new mailingList ({
         mailingRecepient: req.body.mailingName,
@@ -23,23 +23,23 @@ router.post('/mailingList', [check('mailingEmail').isEmail()], async(req, res) =
     })
 
     if (!newSubscriber.mailingRecepient  || !newSubscriber.mailingEmail) {
-        errors.push({ msg: "Please fill in all the details." })
+        mailingListErrors.push({ msg: "Please fill in all the details." })
     }
 
     //check if email is valid
     const error = validationResult(req)
     if (!error.isEmpty()) {
-        errors.push ({ msg: "Please enter a valid Email address" })
+        mailingListErrors.push ({ msg: "Please enter a valid Email address" })
     }
 
-    if (errors.length > 0) {
+    if (mailingListErrors.length > 0) {
         const latestBlogs = await blogQuery.exec()
-        res.render('index', ({ latestBlogs: latestBlogs, errors }))
+        res.render('index', ({ latestBlogs: latestBlogs, mailingListErrors }))
     } else {
         try{
             const subscriberDetails  = newSubscriber.save() 
-            req.flash('success_msg', 'Subscribed successfullly!')
-            res.redirect('/#mailingListBlock')
+            req.flash('mailingListSuccess_msg', 'Hey ' + newSubscriber.mailingRecepient + "," )
+            res.redirect('/')
         } catch (error) {
             console.log(error)
         }

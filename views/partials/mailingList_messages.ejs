@@ -1,0 +1,50 @@
+<div class="toast-container" aria-live="polite" aria-atomic="true">
+<!-- Then put toasts within -->
+    <% if(mailingListSuccess_msg != '') { %>
+    <div class="toast card mb-3" style="max-width: 540px;"  role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="/assets/mailingListSuccess.jpg" class="card-img img-fluid h-100" alt="Healthy Rythm Mailing List">
+          </div>
+          <div class="col-md-7 bg-mainColor">
+            <div class="card-body">
+                <h5 class="toast-header card-title bg-ivory font-primary">Success!</h5>
+                <p class="toast-body card-text font-secondary">
+                    <%= mailingListSuccess_msg %>
+                    <br> We are excited to see you join the Healthy Rythm mailing list! Look for our next mail with the latest from us.
+                </p>
+                <p class="card-text mb-0" style="bottom: 0%;"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+            <div class="col-md-1 bg-mainColor">
+                <button type="button" class="close shadow-none mt-2" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true" class="border-0 shadow-none p-3 ">&times;</span>
+                </button>
+            </div>
+        </div>
+      </div>
+      <% } %>
+
+
+
+
+    
+    <% if(typeof mailingListErrors != 'undefined') { %>
+        <% mailingListErrors.forEach(function(error) { %>
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+                <div class="toast-header bg-ivory">
+                    <strong class="mr-2 font-primary">There was a problem in subscribing</strong>
+                    <button type="button" class="ml-2 mb-1 close shadow-none" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true" class="border-0 shadow-none">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body bg-mainColor font-secondary">
+                    <%= error.msg %> 
+                    <br>
+                    <a href="#mailingListBlock" class="btn btn-dark mt-2 text-decoration-none">Try again</a>
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+
+</div>
