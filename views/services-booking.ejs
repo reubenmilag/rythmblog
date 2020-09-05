@@ -40,12 +40,12 @@
                     <div class="container-fluid m-0 p-0" id="SOI-firstForm">
                         <div class="form-group">
                             <label for="exampleInputName1">Date:</label>
-                            <input type="date" class="form-control" id="userSelectedDate" name="userDate" aria-describedby="" autofocus required>
+                            <input type="date" class="form-control shadow-none" id="userSelectedDate" name="userDate" aria-describedby="" autofocus required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Time:</label>
                             <!-- <input type="time" class="form-control" id="userSelectedTime" name="userTime" aria-describedby=""> -->
-                            <select id="userSelectedTimeSlot" class="form-control" name="TimeSlot" required>
+                            <select id="userSelectedTimeSlot" class="form-control shadow-none" name="TimeSlot" required>
                             <option class="pt-5" disabled selected>select...</option>
                             <option class="pt-5" value="09:00AM - 10:00AM">09:00 AM</option>
                             <option class="pt-5" value="10:00AM - 11:00AM">10:00 AM</option>
@@ -67,22 +67,22 @@
                     <div class="container-fluid m-0 p-0 SOISecondayInfo" id="SOI-secondForm">
                         <div class="form-group">
                             <label for="exampleInputName1">Name:</label>
-                            <input type="text" class="form-control" id="userName" name="userName" aria-describedby="">
+                            <input type="text" class="form-control shadow-none" id="userName" name="userName" aria-describedby="">
                           </div>
                           <div class="form-group">
                             <label for="exampleInputName1">Phone No.:</label>
-                            <input type="text" class="form-control" id="userPhone" name="userPhone" aria-describedby="">
+                            <input type="text" class="form-control shadow-none" id="userPhone" name="userPhone" aria-describedby="">
                           </div>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Email address:</label>
-                            <input type="email" class="form-control" id="userEmail" name="userEmail"  aria-describedby="emailHelp">
+                            <input type="email" class="form-control shadow-none" id="userEmail" name="userEmail"  aria-describedby="emailHelp">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email or phone details with anyone else.</small>
                           </div>
                     </div>
                     <div class="container-fluid m-0 p-0 SOISecondayInfo" id="SOI-thirdForm">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Service of Interest:</label>
-                            <select id="inputState" value="" class="form-control" name="SOI">
+                            <select id="inputState" value="" class="form-control shadow-none" name="SOI">
                               <option disabled selected>Choose...</option>
                               <option id="diet-prescription" value="diet-prescription">Diet Prescription</option>
                               <option id="preventive-diet" value="preventive-diet">Preventive Diet</option>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="form-group mt-4">
                           <label for="exampleInputEmail1">Please share anything that will help me prepare for our meeting:</label>
-                          <textarea class="form-control" id="userMessage" name="userMessage"></textarea>
+                          <textarea class="form-control shadow-none" id="userMessage" name="userMessage"></textarea>
                         </div>
                     </div>
                     <div class="container-fluid m-0 p-0 SOISecondayInfo" id="SOI-fourthForm">
@@ -111,16 +111,16 @@
     
                 </form>        
                 <!-- first form -->
-                <button onclick="timeslotConfirmation()" class="btn text-light float-right mt-4" style="background-color: #1A936F;" id="SOI-firstConfirm"><span class="font-weight-bold ">Confirm</span></button>
+                <button onclick="timeslotConfirmation()" class="btn text-light float-right mt-4 shadow-none" style="background-color: #1A936F;" id="SOI-firstConfirm"><span class="font-weight-bold">Confirm</span></button>
                 <!-- second form -->
-                <button onclick="personalDetailsBack()" class="btn text-light float-left mt-4 btn-secondary SOISecondayInfo" id="SOI-firstBack"><span class="font-weight-bold ">Back</span></button>
-                <button onclick="onPersonalDetailsConfirmation()" class="btn text-light float-right mt-4 SOISecondayInfo"  id="SOI-secondConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
+                <button onclick="personalDetailsBack()" class="btn text-light float-left mt-4 shadow-none btn-secondary SOISecondayInfo" id="SOI-firstBack"><span class="font-weight-bold ">Back</span></button>
+                <button onclick="onPersonalDetailsConfirmation()" class="btn text-light float-right mt-4 shadow-none SOISecondayInfo"  id="SOI-secondConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
                 <!-- third form btns -->
-                <button onclick="meetingDetailsBack()" class="btn text-light float-left mt-4 btn-secondary SOISecondayInfo" id="SOI-secondBack"><span class="font-weight-bold ">Back</span></button>
-                <button onclick="onMeetingDetailsConfirmation()" class="btn text-light float-right mt-4 SOISecondayInfo"  id="SOI-thirdConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
+                <button onclick="meetingDetailsBack()" class="btn text-light float-left mt-4 shadow-none btn-secondary SOISecondayInfo" id="SOI-secondBack"><span class="font-weight-bold ">Back</span></button>
+                <button onclick="onMeetingDetailsConfirmation()" class="btn text-light float-right mt-4 shadow-none SOISecondayInfo"  id="SOI-thirdConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
                 <!-- fourth form btns -->
-                <button onclick="paymentDetailsBack()" class="btn text-light float-left mt-4 btn-secondary SOISecondayInfo" id="SOI-thirdBack"><span class="font-weight-bold ">Back</span></button>
-                <button onclick="document.getElementById('appointmentsForm').submit()" class="btn text-light float-right mt-4 SOISecondayInfo"  id="SOI-fourthConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
+                <button onclick="paymentDetailsBack()" class="btn text-light float-left mt-4 shadow-none btn-secondary SOISecondayInfo" id="SOI-thirdBack"><span class="font-weight-bold ">Back</span></button>
+                <button onclick="document.getElementById('appointmentsForm').submit()" class="btn text-light float-right mt-4 shadow-none SOISecondayInfo"  id="SOI-fourthConfirm" style="background-color: #1A936F;"><span class="font-weight-bold ">Confirm</span></button>
                 <br>
                 <br>
             </div>

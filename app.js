@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
@@ -10,7 +11,7 @@ const app = express()
 
 
 //DB CONFIG
-const db = require('./config/keys').MongoURI
+const db = process.env.Mongo_URI
 
 //CONNECT TO MONGO
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
