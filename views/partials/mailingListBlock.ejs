@@ -1,19 +1,22 @@
 <div class="container-fluid contact-container" id="mailingListBlock">
-    <div class="continer-fluid wide p-5">
-      <h3 class="font-primary contact-header px-5 mt-4"><b>Join&nbsp;</b> the club!</h3>
-      <p class="font-secondary contact-para px-5">join my mailing list to stay uptodate with the latest from me</p>
-      <form class="px-5 py-3 mb-4 font-secondary" id="form-mailingList" action="/formHandling/mailingList" method="POST">
+    <div class="continer-fluid wide px-0 py-5 p-md-5">
+      <h3 class="font-primary contact-header px-3 px-md-5 mt-4"><b>Join&nbsp;</b> the club!</h3>
+      <p class="fon t-secondary contact-para px-3 px-md-5">join my mailing list to stay uptodate with the latest from me</p>
+      <form class="px-3 px-md-5 py-3 mb-4 font-secondary" id="form-mailingList" action="/formHandling/mailingList" method="POST">
         <div class="form-row" aria-describedby="safetyMessageBlock">
           <div class="col-12 col-md-3">
-            <input type="text" class="form-control shadow-none" placeholder="your name"  name="mailingName">
+            <input type="text" class="form-control shadow-none py-4 px-3 p-md-0 px-md-3" placeholder="your name"  name="mailingName">
           </div>
-          <div class="col-12 col-md-4">
-            <input type="email" class="form-control shadow-none" placeholder="your email address" name="mailingEmail">
+          <div class="col-12 col-md-4 my-3 my-md-0">
+            <input type="email" class="form-control shadow-none py-4 px-3 py-md-0 px-md-3" placeholder="your email address" name="mailingEmail">
           </div>
+          <small id="safetyMessageBlock" class="form-text px-3 d-md-none mb-4">
+            We respect your privacy and will never share your data.
+          </small>
           <div class="col-12 col-md-2">
-            <button class="btn form-mailingList-submitBtn px-3 ml-3 shadow-none" onclick="document.getElementById('form-mailingList').submit();">subscribe</button>
+            <button class="btn form-mailingList-submitBtn px-3 ml-0 ml-md-3 shadow-none" onclick="document.getElementById('form-mailingList').submit();">subscribe</button>
           </div>
-          <small id="safetyMessageBlock" class="form-text px-3">
+          <small id="safetyMessageBlock" class="form-text p-3 px-md-3 py-md-0 d-none d-md-block">
             We respect your privacy and will never share your data.
           </small>
         </div>

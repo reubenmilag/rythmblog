@@ -1,5 +1,7 @@
 /* ********** GENERAL CSS ********** */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pinyon+Script&family=Playfair+Display:wght@400;700&display=swap');
+@import url(/styles/sm-main.css);
+
 
 
 html, body {
@@ -175,13 +177,11 @@ nav a:hover {
     text-transform: uppercase;
     color: #FFFFFF;
     border: 3px solid rgba(255, 255, 255, 0.9) !important; 
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
 }
 
 .form-mailingList-submitBtn:hover {
     color: #F2F6EA !important;
+    background-color: #f1f1f131;
 }
 
 #safetyMessageBlock {    
@@ -217,12 +217,6 @@ nav a:hover {
     color: #141212;
     opacity: 75%;
     font-size: 1rem;
-}
-
-@media (max-width: 576px) { 
-    .bottom-links-right, .bottom-links-left {
-        border: none !important;
-    }
 }
 
 .toast-container {
@@ -577,13 +571,6 @@ nav a:hover {
 .contactUs-secondaryContainer1 {
     background-image: url(/assets/snazzy-image.png);
     background-size: cover;
-}
-
-
-@media (max-width: 576px) { 
-    .contactUs-FormContainer {
-        border: none !important;
-    }
 }
 
 .contactUs-header {
@@ -982,6 +969,25 @@ nav a:hover {
 	display: none;
 }
 
+.servicesBooking-ConfirmBtn {
+    background-color: #1A936F;
+    letter-spacing: 0.05rem;
+}
+
+.servicesBooking-ConfirmBtn:hover {
+    background-color: #23a37d;
+}
+
+.servicesBooking-BackBtn {
+    letter-spacing: 0.03rem;
+}
+
+.servicesBooking-BackBtn:hover {
+    background-color: #e2e1e1 !important;
+}
+
+
+
 
 
 
@@ -1038,10 +1044,6 @@ nav a:hover {
     letter-spacing: 0.06rem;
 }
 
-#AboutUs-imageContainer {
-    position: relative;
-}
-
 #aboutUsImage-para2 {
     position: absolute;
     left: 58%;
@@ -1053,6 +1055,7 @@ nav a:hover {
 
 #aboutUsImage-para1 {
     position: absolute;
+    z-index: 1;
     left: 8%;
     top: 8%;
     max-height: 25rem;
