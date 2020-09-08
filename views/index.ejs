@@ -1,5 +1,4 @@
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark w-100 py-0">
+  <nav class="navbar navbar-expand-lg navbar-dark w-100 py-0">
         <div class="container super-wide my-0 py-0">
         <a class="navbar-brand" href="#">
             <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top mx-3 my-auto m-md-0" alt="" loading="lazy">
@@ -10,11 +9,11 @@
         </button>
         <div class="collapse navbar-collapse h-100" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto mr-0 pr-0 h-100">
-                <a class="nav-item nav-link px-4 py-5 active" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link px-4" id="page2" href="/blogs:">Blog</a>
-                <a class="nav-item nav-link px-4" id="page2" href="/services">Services</a>
-                <a class="nav-item nav-link px-4" id="page4" href="/about-us">About</a>                    
-                <a class="nav-item nav-link px-4" id="page5" href="/contact-us">Contact</a>
+                <a class="nav-item nav-link px-4 py-5 indexPage-navItem active" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link px-4 py-4 indexPage-navItem py-md-0" id="page2" href="/blogs:">Blog</a>
+                <a class="nav-item nav-link px-4 py-4 indexPage-navItem py-md-0" id="page2" href="/services">Services</a>
+                <a class="nav-item nav-link px-4 py-4 indexPage-navItem py-md-0" id="page4" href="/about-us">About</a>                    
+                <a class="nav-item nav-link px-4 py-4 indexPage-navItem py-md-0" id="page5" href="/contact-us">Contact</a>
             </div>
         </div> 
     </div>         
@@ -27,30 +26,33 @@
   <div id="carouselExampleInterval" class="carousel slide carousel-fade index-carousel" data-ride="carousel">
     <div class="carousel-inner mt-0">
       <div class="carousel-item hero_image active" data-interval="10000">
-        <img src="/assets/ppp.jpg" class="d-block w-100" alt="...">
+        <img src="/assets/ppp.jpg" class="d-none d-md-block w-100" alt="...">
+        <img src="/assets/111.png" class="d-block d-md-none w-100" alt="...">
         <div class="carousel-caption wide">
-          <small>services</small><br>
+          <small class="d-none d-md-block">services</small><br>
           <h3 class="font-primary">GET HEALTHY YOUR WAY</h3>
           <p class="d-sm-none d-md-block font-primary">Diet Plans that are taylor made to your unique requirements. Get yours now to get better personal results.</p>
-          <a href="/services-booking:?SOI=custom-dietplans" class="btn mt-3 border py-2 px-4 w-auto">BOOK NOW</a>
+          <a href="/services-booking:?SOI=custom-dietplans" class="btn mt-3 border py-3 py-md-2 px-4 w-auto">BOOK NOW</a>
         </div>   
       </div>
       <div class="carousel-item hero_image" data-interval="10000">
-        <img src="/assets/index _herocarousel_img_2p.png" class="d-block w-100" alt="...">
+        <img src="/assets/index _herocarousel_img_2p.png" class="d-none d-md-block w-100" alt="...">
+        <img src="/assets/222.png" class="d-block d-md-none w-100" alt="...">
         <div class="carousel-caption wide">
-          <small>services</small><br>
+          <small class="d-none d-md-block">services</small><br>
           <h3 class="font-primary">Workshops on health and wellness</h3>
           <p class="d-sm-none d-md-block font-primary">I use fun, interactive methods to teach you about fitness, nutrition, stress management, and other aspects of health and well-being.</p>
-          <a href="/services-booking::?SOI=workshops"><button class="btn mt-4 border py-2 px-4">BOOK NOW</button></a>
+          <a href="/services-booking::?SOI=workshops"><button class="btn py-3 py-md-2 border py-2 px-4">BOOK NOW</button></a>
         </div>   
       </div>
       <div class="carousel-item hero_image" data-interval="10000">
-        <img src="/assets/index _herocarousel_img_3.jpg" class="d-block w-100" alt="...">
+        <img src="/assets/index _herocarousel_img_3.jpg" class="d-none d-md-block w-100" alt="...">
+        <img src="/assets/333.png" class="d-block d-md-none w-100" alt="...">
         <div class="carousel-caption wide">
-          <small>services</small><br>
+          <small class="d-none d-md-block">services</small><br>
           <h3 class="font-primary">Nutritional Counselling</h3>
           <p class="d-sm-none d-md-block font-primary">With all the information about health and nutrition, it is hard to keep the rules straight.<br> Let me help you with that!</p>
-          <a href="/services#lifestyle-modification"><button class="btn mt-4 border py-2 px-4">Know more</button></a>
+          <a href="/services#lifestyle-modification"><button class="btn py-3 py-md-2 mt-4 border py-2 px-4">Know more</button></a>
         </div>   
       </div>
     </div>
@@ -259,20 +261,3 @@
 
   
   <%- include ('../views/partials/mailingListBlock.ejs') %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
