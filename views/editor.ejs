@@ -28,11 +28,11 @@
 
 <div class="container-fluid row super-wide">
     <div class="bg-white col-2 my-3 dashboard-sidebar">
-        <a href="/admin/dashboard"></a><button class="btn bg-ivory dashboard-sidebar-btnText mx-auto my-4 px-3 dashboard-sidebar-mainBtn">upload new blog</button></a>
+        <a href="/admin/dashboard"><button class="btn bg-ivory dashboard-sidebar-btnText mx-auto my-4 px-3 dashboard-sidebar-mainBtn">upload new blog</button></a>
         <a href="/admin/blog-editor"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">edit blogs</button><hr class="m-0"></a>
-        <button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">service messages</button><hr class="m-0">            
-        <button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">business messages</button><hr class="m-0">
-        <button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">subscriber email</button><hr class="m-0">
+        <a href="/admin/#"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">service messages</button><hr class="m-0"></a>            
+        <a href="/admin/#"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">business messages</button><hr class="m-0"></a>
+        <a href="/admin/#"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">subscriber email</button><hr class="m-0"></a>
         <a href="/admin/logout" class="text-decoration-none"><button class="btn bg-dark text-light dashboard-sidebar-btnText mx-auto mt-auto mb-4 px-5 py-0 dashboard-sidebar-mainBtn dashboard-sidebar-logoutbtn">Log out</button></a>
     </div>
     <div class="container-fluid col-10 row-1">
@@ -48,14 +48,15 @@
             </div>
         </div>
         <div class="col-12 bg-ivory dashboard-titlebar m-3">
-            <span class="dashboard-titlebar-text px-2 font-secondary">upload blog</span>
+            <span class="dashboard-titlebar-text px-2 font-secondary">editor</span>
         </div>
         <div class="col-12 bg-white m-3 h-auto">
+
             <form id="form-blogUpload" class="p-4 m-0 mb-5 border bg-white border-0 w-75 float-left h-auto" name="blogUpload" action="/adminFormHandling/upload-blog" method="POST"  enctype="multipart/form-data">
                 <%- include ('./partials/messages') %>
                 <div class="form-group p-2">
                     <label for="blogUpload-title">title</label>
-                    <input id="blogUpload-title" class="form-control" name="blog_title" type="text">
+                    <input id="blogUpload-title" class="form-control" name="blog_title" value="<%= Blog.blog_title %>" type="text">
                 </div>
                 <div class="form-group p-2">
                     <label>image</label>
@@ -76,14 +77,11 @@
                     </div>
                     <div class="form-group col">
                         <label>Secondary Tag</label>
-                        <input id="blogUpload-secondaryTag" class="form-control" name="blog_secondaryTag" type="text">
+                        <input id="blogUpload-secondaryTag" class="form-control" name="blog_secondaryTag" value="<%= Blog.blog_secondaryTag %>" type="text">
                     </div>
                 </div>   
                 <div class="form-group p-2">
                     <label for="blogUpload-body">body</label>
-                    <script>
-                        document.getElementById('blogUpload-body').value="<em>this is italics</em>"
-                    </script>
                     <div id="mytextarea" class="form-control shadow-none my-2" rows="16" contenteditable="true" name="mytextarea"></div>
                     <script>
                         tinymce.init({
@@ -98,6 +96,7 @@
                 </div>   
                 <input class="btn btn-dark text-light font-secondary float-right px-4 m-2" type="submit" value="Upload">          
             </form>
+
         </div>
     </div>
 </div>

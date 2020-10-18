@@ -1,0 +1,83 @@
+<head><script src="https://cdn.tiny.cloud/1/jar4ad6oyk59a6ze97f6dnopv44w2g7g6k4w65qvd2s247bg/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script></head>
+<div class="container-fluid m-0 p-0 bg-dark h-auto">
+    <nav class="nav super-wide navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/navbar-logo.png" width="98" height="58" class="d-inline-block align-top" alt="" loading="lazy">
+            <span class="navbar-brand pl-2">Healthy Rythm</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto mr-0 pr-0">
+                <a class="nav-item nav-link px-4" id="page1" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link px-4" id="page2" href="/blogs:">Blogs</a>
+                <a class="nav-item nav-link px-4" id="page3" href="/services">Services</a>
+                <a class="nav-item nav-link px-4" id="page4" href="/about-us">About Us</a>                    
+                <a class="nav-item nav-link px-4" id="page5" href="/contact-us">Contact</a>
+            </div>
+        </div>          
+    </nav>
+    <img src="/assets/login-imagebar.png" alt="login-imagebar" class="img-fluid m-0 p-0 w-100">
+</div>
+<!-- end of nav -->
+
+
+<!-- DASHBOARD BODY -->
+
+
+<div class="container-fluid row super-wide">
+    <div class="bg-white col-2 my-3 dashboard-sidebar">
+        <a href="/admin/dashboard"><button class="btn bg-ivory dashboard-sidebar-btnText mx-auto my-4 px-3 dashboard-sidebar-mainBtn">upload new blog</button></a>
+        <a href="/admin/blog-editor"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">edit blogs</button><hr class="m-0"></a>
+        <a href="/admin/#"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">service messages</button><hr class="m-0"></a>            
+        <a href="/admin/#"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">business messages</button><hr class="m-0"></a>
+        <a href="/admin/#"><button class="btn bg-white dashboard-sidebar-btnText mx-auto mt-3 mb-0 pb-0 dashboard-sidebar-secondaryBtn">subscriber email</button><hr class="m-0"></a>
+        <a href="/admin/logout" class="text-decoration-none"><button class="btn bg-dark text-light dashboard-sidebar-btnText mx-auto mt-auto mb-4 px-5 py-0 dashboard-sidebar-mainBtn dashboard-sidebar-logoutbtn">Log out</button></a>
+    </div>
+    <div class="container-fluid col-10 row-1">
+        <div class="col-12 bg-white dashboard-searchbar m-3 p-0">
+            <div class="input-group m-0 h-100 w-100">
+                <form id="search_form" class="p-0 m-0 border bg-white border-0 w-75" name="Searchform" action="#" method="POST">
+                    <div class="input-group-prepend bg-white">
+                        <span class="input-group-text bg-white border-0" id="basic-addon1"><img src="/assets/search-solid.svg" class="img-fluid dashboard-searchbar-icon" alt="search icon"></span>
+                        <input type="text" class="form-control border-0 dashboard-searchbar-input font-secondary" placeholder="SEARCH" aria-label="Username" aria-describedby="basic-addon1" style="outline: none !important;">
+                    </div>
+                </form>
+                <span class="font-secondary dashboard-searchbar-text ml-auto mr-3">Regina Pinheiro</span>
+            </div>
+        </div>
+        <div class="col-12 bg-ivory dashboard-titlebar m-3">
+            <span class="dashboard-titlebar-text px-2 font-secondary">edit blogs</span>
+        </div>
+        <div class="col-12 bg-white m-3 h-auto">
+
+
+            <button class="openbtn d-md-none bg-nyanza" onclick="openNav()"><i class="fas fa-angle-right"></i></button>
+            <div class="col-12 row m-0" id="SortingDesc">
+                <% Blogs.forEach( blog => { %>
+                <div class="col-6 col-md-3 mb-2 mb-md-0 pr-md-0">
+                    <a href="editor/<%= blog.blog_link %>" class="m-0 p-0 text-decoration-none text-dark">
+                        <div class="card blogs-card mb-5 border-0">
+                            <img src="/assets/blog-assets/<%= blog.blog_imageName %>" class="card-img-top img-fluid m-0 p-0 blogs-image" alt="...">
+                            <div class="card-body blogs-title font-primary bg-mainColor text-center pb-0">
+                                <h5 class="card-title m-0"><%= blog.blog_title %></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- END OF DASHBOARD BODY -->
